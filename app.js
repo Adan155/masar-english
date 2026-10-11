@@ -1,11 +1,2506 @@
 /* MASAR English Journey — app.js
-   30 A2 lessons for adult learners (Arabic support).
+   60 lessons: A1 beginner course followed by the existing A2 course (Arabic support).
    Progress is saved in localStorage under "masar-progress".
    Progress is now stored by lesson ID (so lessons can be re-ordered safely);
    progress saved by the older 5-lesson version is migrated automatically. */
 
 const lessons = [
+  // A1 beginner course: 30 lessons
+
   {
+    "id": "a1-alphabet-greetings",
+    "title": "Hello! Greetings and the Alphabet",
+    "icon": "👋",
+    "time": "5 min",
+    "desc": "Greet people and spell your name.",
+    "objective": "Say hello, goodbye, and spell your name.",
+    "phrases": [
+      [
+        "Hello!",
+        "مرحباً"
+      ],
+      [
+        "Good morning.",
+        "صباح الخير"
+      ],
+      [
+        "Goodbye.",
+        "مع السلامة"
+      ],
+      [
+        "How do you spell your name?",
+        "كيف تتهجّى اسمك؟"
+      ]
+    ],
+    "vocabulary": [
+      [
+        "hello",
+        "مرحباً"
+      ],
+      [
+        "goodbye",
+        "مع السلامة"
+      ],
+      [
+        "name",
+        "اسم"
+      ],
+      [
+        "letter",
+        "حرف"
+      ]
+    ],
+    "grammar": {
+      "title": "Greetings",
+      "explanation": "Use a greeting that matches the situation.",
+      "examples": [
+        [
+          "Hello!",
+          "مرحباً"
+        ],
+        [
+          "Good morning.",
+          "صباح الخير"
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: Hello!",
+        "أ: مرحباً!"
+      ],
+      [
+        "B: Hi! I’m Sara.",
+        "ب: أهلاً! أنا سارة."
+      ]
+    ],
+    "mistake": {
+      "wrong": "Good morning night.",
+      "correct": "Good evening.",
+      "explanation": "Use “Good evening” in the evening."
+    },
+    "q": "What can you say when you meet someone?",
+    "answers": [
+      "Goodbye!",
+      "Hello!",
+      "Good night!"
+    ],
+    "correct": 1,
+    "explain": "“Hello!” is a greeting used when you meet someone.",
+    "challenge": "Greet someone and spell your first name slowly.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-introductions",
+    "title": "My Name Is…",
+    "icon": "🪪",
+    "time": "5 min",
+    "desc": "Introduce yourself with simple sentences.",
+    "objective": "Give your name and ask another person’s name.",
+    "phrases": [
+      [
+        "I’m Adil.",
+        "أنا عادل."
+      ],
+      [
+        "My name is Sara.",
+        "اسمي سارة."
+      ],
+      [
+        "What’s your name?",
+        "ما اسمك؟"
+      ],
+      [
+        "Nice to meet you.",
+        "سعيد/ة بلقائك."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "I",
+        "أنا"
+      ],
+      [
+        "you",
+        "أنت"
+      ],
+      [
+        "meet",
+        "يقابل"
+      ],
+      [
+        "nice",
+        "سعيد / لطيف"
+      ]
+    ],
+    "grammar": {
+      "title": "Subject pronouns + be",
+      "explanation": "Use I am / I’m for yourself and you are / you’re for another person.",
+      "examples": [
+        [
+          "I’m Adil.",
+          "أنا عادل."
+        ],
+        [
+          "My name is Sara.",
+          "اسمي سارة."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: What’s your name?",
+        "أ: ما اسمك؟"
+      ],
+      [
+        "B: I’m Mona. Nice to meet you.",
+        "ب: أنا منى. سعيدة بلقائك."
+      ]
+    ],
+    "mistake": {
+      "wrong": "I Sara.",
+      "correct": "I’m Sara.",
+      "explanation": "A sentence needs “am” here: I am / I’m."
+    },
+    "q": "Choose the correct introduction.",
+    "answers": [
+      "I name Sara.",
+      "I’m Sara.",
+      "Me Sara."
+    ],
+    "correct": 1,
+    "explain": "“I’m” is the short form of “I am.”",
+    "challenge": "Introduce yourself in three sentences.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-countries-nationalities",
+    "title": "Countries and Nationalities",
+    "icon": "🌍",
+    "time": "5 min",
+    "desc": "Say where you are from.",
+    "objective": "Ask and answer about countries and nationalities.",
+    "phrases": [
+      [
+        "Where are you from?",
+        "من أين أنت؟"
+      ],
+      [
+        "I’m from Sudan.",
+        "أنا من السودان."
+      ],
+      [
+        "I’m Sudanese.",
+        "أنا سوداني/ة."
+      ],
+      [
+        "Are you Libyan?",
+        "هل أنت ليبي/ة؟"
+      ]
+    ],
+    "vocabulary": [
+      [
+        "country",
+        "دولة"
+      ],
+      [
+        "nationality",
+        "جنسية"
+      ],
+      [
+        "Sudan",
+        "السودان"
+      ],
+      [
+        "Libya",
+        "ليبيا"
+      ]
+    ],
+    "grammar": {
+      "title": "Be + from",
+      "explanation": "Use “I’m from + country” and “I’m + nationality.”",
+      "examples": [
+        [
+          "Where are you from?",
+          "من أين أنت؟"
+        ],
+        [
+          "I’m from Sudan.",
+          "أنا من السودان."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: Where are you from?",
+        "أ: من أين أنت؟"
+      ],
+      [
+        "B: I’m from Sudan. I’m Sudanese.",
+        "ب: أنا من السودان. أنا سوداني/ة."
+      ]
+    ],
+    "mistake": {
+      "wrong": "I from Sudan.",
+      "correct": "I’m from Sudan.",
+      "explanation": "Use “am” with “I”."
+    },
+    "q": "Complete: I ___ from Sudan.",
+    "answers": [
+      "is",
+      "am",
+      "are"
+    ],
+    "correct": 1,
+    "explain": "“I” goes with “am”.",
+    "challenge": "Say your country and nationality.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-numbers-age",
+    "title": "Numbers and Age",
+    "icon": "🔢",
+    "time": "5 min",
+    "desc": "Use numbers and say your age.",
+    "objective": "Count and ask or answer about age.",
+    "phrases": [
+      [
+        "How old are you?",
+        "كم عمرك؟"
+      ],
+      [
+        "I’m twenty years old.",
+        "عمري عشرون سنة."
+      ],
+      [
+        "I’m 26.",
+        "عمري ٢٦ سنة."
+      ],
+      [
+        "Can you repeat that?",
+        "هل يمكنك إعادة ذلك؟"
+      ]
+    ],
+    "vocabulary": [
+      [
+        "one",
+        "واحد"
+      ],
+      [
+        "ten",
+        "عشرة"
+      ],
+      [
+        "twenty",
+        "عشرون"
+      ],
+      [
+        "years old",
+        "العمر بالسنوات"
+      ]
+    ],
+    "grammar": {
+      "title": "Age with be",
+      "explanation": "Say “I’m + number” or “I’m + number + years old.”",
+      "examples": [
+        [
+          "How old are you?",
+          "كم عمرك؟"
+        ],
+        [
+          "I’m twenty years old.",
+          "عمري عشرون سنة."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: How old are you?",
+        "أ: كم عمرك؟"
+      ],
+      [
+        "B: I’m twenty-six.",
+        "ب: عمري ستة وعشرون."
+      ]
+    ],
+    "mistake": {
+      "wrong": "I have 26 years.",
+      "correct": "I’m 26 years old.",
+      "explanation": "English normally uses “be” to talk about age."
+    },
+    "q": "How do you ask someone’s age?",
+    "answers": [
+      "How age are you?",
+      "How old are you?",
+      "What old you are?"
+    ],
+    "correct": 1,
+    "explain": "The correct question is “How old are you?”",
+    "challenge": "Say three numbers and your age.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-classroom-phrases",
+    "title": "Useful English in Class",
+    "icon": "📚",
+    "time": "5 min",
+    "desc": "Ask for help when you do not understand.",
+    "objective": "Use simple classroom requests.",
+    "phrases": [
+      [
+        "I don’t understand.",
+        "أنا لا أفهم."
+      ],
+      [
+        "Please repeat.",
+        "أعد من فضلك."
+      ],
+      [
+        "How do you say this in English?",
+        "كيف تقول هذا بالإنجليزية؟"
+      ],
+      [
+        "Thank you.",
+        "شكراً لك."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "understand",
+        "يفهم"
+      ],
+      [
+        "repeat",
+        "يعيد"
+      ],
+      [
+        "please",
+        "من فضلك"
+      ],
+      [
+        "help",
+        "مساعدة"
+      ]
+    ],
+    "grammar": {
+      "title": "Imperatives and requests",
+      "explanation": "Use a base verb for simple instructions: “Repeat, please.” Add “please” to sound polite.",
+      "examples": [
+        [
+          "I don’t understand.",
+          "أنا لا أفهم."
+        ],
+        [
+          "Please repeat.",
+          "أعد من فضلك."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: Sorry, I don’t understand.",
+        "أ: عذراً، لا أفهم."
+      ],
+      [
+        "B: No problem. I’ll repeat.",
+        "ب: لا مشكلة. سأعيد."
+      ]
+    ],
+    "mistake": {
+      "wrong": "Please to repeat.",
+      "correct": "Please repeat.",
+      "explanation": "After “please” in this request, use the base verb."
+    },
+    "q": "What can you say if you cannot hear clearly?",
+    "answers": [
+      "Speak slowly, please.",
+      "I am not hear.",
+      "You repeat to."
+    ],
+    "correct": 0,
+    "explain": "“Speak slowly, please” is a polite request.",
+    "challenge": "Practise asking for repetition and help.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-pronouns-be",
+    "title": "I, You, He, She, We, They",
+    "icon": "🧑‍🤝‍🧑",
+    "time": "5 min",
+    "desc": "Talk about yourself and other people.",
+    "objective": "Choose subject pronouns and the verb be.",
+    "phrases": [
+      [
+        "He is my brother.",
+        "هو أخي."
+      ],
+      [
+        "She is my friend.",
+        "هي صديقتي."
+      ],
+      [
+        "We are students.",
+        "نحن طلاب."
+      ],
+      [
+        "They are at home.",
+        "هم في المنزل."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "he",
+        "هو"
+      ],
+      [
+        "she",
+        "هي"
+      ],
+      [
+        "we",
+        "نحن"
+      ],
+      [
+        "they",
+        "هم"
+      ]
+    ],
+    "grammar": {
+      "title": "Subject pronouns + be",
+      "explanation": "I am; he/she/it is; you/we/they are.",
+      "examples": [
+        [
+          "He is my brother.",
+          "هو أخي."
+        ],
+        [
+          "She is my friend.",
+          "هي صديقتي."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: Who is she?",
+        "أ: من هي؟"
+      ],
+      [
+        "B: She is my sister.",
+        "ب: هي أختي."
+      ]
+    ],
+    "mistake": {
+      "wrong": "They is here.",
+      "correct": "They are here.",
+      "explanation": "Use “are” with “they”."
+    },
+    "q": "Choose: He ___ my friend.",
+    "answers": [
+      "am",
+      "are",
+      "is"
+    ],
+    "correct": 2,
+    "explain": "Use “is” with he, she, and it.",
+    "challenge": "Describe three people using he, she, or they.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-family",
+    "title": "My Family",
+    "icon": "👨‍👩‍👧",
+    "time": "5 min",
+    "desc": "Name family members and describe your family.",
+    "objective": "Talk about close family members.",
+    "phrases": [
+      [
+        "This is my mother.",
+        "هذه أمي."
+      ],
+      [
+        "I have two brothers.",
+        "لدي أخوان."
+      ],
+      [
+        "Do you have children?",
+        "هل لديك أطفال؟"
+      ],
+      [
+        "I live with my family.",
+        "أعيش مع أسرتي."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "mother",
+        "أم"
+      ],
+      [
+        "father",
+        "أب"
+      ],
+      [
+        "sister",
+        "أخت"
+      ],
+      [
+        "brother",
+        "أخ"
+      ]
+    ],
+    "grammar": {
+      "title": "Have / has",
+      "explanation": "Use “I have” and “you have”; use “he/she has”.",
+      "examples": [
+        [
+          "This is my mother.",
+          "هذه أمي."
+        ],
+        [
+          "I have two brothers.",
+          "لدي أخوان."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: Do you have brothers?",
+        "أ: هل لديك إخوة؟"
+      ],
+      [
+        "B: Yes, I have two brothers.",
+        "ب: نعم، لدي أخوان."
+      ]
+    ],
+    "mistake": {
+      "wrong": "She have one sister.",
+      "correct": "She has one sister.",
+      "explanation": "Use “has” with he and she."
+    },
+    "q": "Choose the correct sentence.",
+    "answers": [
+      "I has a brother.",
+      "I have a brother.",
+      "I am have a brother."
+    ],
+    "correct": 1,
+    "explain": "Use “have” with “I”.",
+    "challenge": "Talk about three people in your family.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-jobs",
+    "title": "Jobs and Work",
+    "icon": "💼",
+    "time": "5 min",
+    "desc": "Name common jobs and say what you do.",
+    "objective": "Ask and answer about jobs.",
+    "phrases": [
+      [
+        "What do you do?",
+        "ما عملك؟"
+      ],
+      [
+        "I’m a teacher.",
+        "أنا معلّم/ة."
+      ],
+      [
+        "I work in a hospital.",
+        "أعمل في مستشفى."
+      ],
+      [
+        "I’m looking for a job.",
+        "أبحث عن عمل."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "teacher",
+        "معلّم"
+      ],
+      [
+        "driver",
+        "سائق"
+      ],
+      [
+        "doctor",
+        "طبيب"
+      ],
+      [
+        "office",
+        "مكتب"
+      ]
+    ],
+    "grammar": {
+      "title": "A / an with jobs",
+      "explanation": "Use a/an before a singular job: a teacher, a driver, an engineer.",
+      "examples": [
+        [
+          "What do you do?",
+          "ما عملك؟"
+        ],
+        [
+          "I’m a teacher.",
+          "أنا معلّم/ة."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: What do you do?",
+        "أ: ما عملك؟"
+      ],
+      [
+        "B: I’m a student.",
+        "ب: أنا طالب/ة."
+      ]
+    ],
+    "mistake": {
+      "wrong": "I am teacher.",
+      "correct": "I am a teacher.",
+      "explanation": "Use “a” before most singular job names."
+    },
+    "q": "Choose: She is ___ doctor.",
+    "answers": [
+      "a",
+      "an",
+      "the"
+    ],
+    "correct": 0,
+    "explain": "“Doctor” starts with a consonant sound, so use “a”.",
+    "challenge": "Say your job or the job you want.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-this-that",
+    "title": "This and That",
+    "icon": "👉",
+    "time": "5 min",
+    "desc": "Point to things near and far.",
+    "objective": "Use this, that, these, and those in simple contexts.",
+    "phrases": [
+      [
+        "What is this?",
+        "ما هذا؟"
+      ],
+      [
+        "This is my phone.",
+        "هذا هاتفي."
+      ],
+      [
+        "That is a window.",
+        "تلك نافذة."
+      ],
+      [
+        "These are my keys.",
+        "هذه مفاتيحي."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "this",
+        "هذا/هذه للقريب"
+      ],
+      [
+        "that",
+        "ذلك/تلك للبعيد"
+      ],
+      [
+        "these",
+        "هؤلاء/هذه للجمع القريب"
+      ],
+      [
+        "those",
+        "أولئك/تلك للجمع البعيد"
+      ]
+    ],
+    "grammar": {
+      "title": "Demonstratives",
+      "explanation": "Use this/that with one thing and these/those with more than one.",
+      "examples": [
+        [
+          "What is this?",
+          "ما هذا؟"
+        ],
+        [
+          "This is my phone.",
+          "هذا هاتفي."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: What are these?",
+        "أ: ما هذه؟"
+      ],
+      [
+        "B: These are my books.",
+        "ب: هذه كتبي."
+      ]
+    ],
+    "mistake": {
+      "wrong": "These is my keys.",
+      "correct": "These are my keys.",
+      "explanation": "Use “are” with plural “these”."
+    },
+    "q": "Choose: ___ is my bag (one bag, near).",
+    "answers": [
+      "These",
+      "This",
+      "Those"
+    ],
+    "correct": 1,
+    "explain": "Use “this” for one thing near you.",
+    "challenge": "Name five things around you using this or that.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-days-time",
+    "title": "Days and Time",
+    "icon": "🗓️",
+    "time": "5 min",
+    "desc": "Talk about days and ask the time.",
+    "objective": "Name days of the week and tell simple times.",
+    "phrases": [
+      [
+        "What day is it today?",
+        "ما اليوم؟"
+      ],
+      [
+        "It’s Monday.",
+        "إنه يوم الاثنين."
+      ],
+      [
+        "What time is it?",
+        "كم الساعة؟"
+      ],
+      [
+        "It’s three o’clock.",
+        "الساعة الثالثة."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "today",
+        "اليوم"
+      ],
+      [
+        "tomorrow",
+        "غداً"
+      ],
+      [
+        "yesterday",
+        "أمس"
+      ],
+      [
+        "o’clock",
+        "تمام الساعة"
+      ]
+    ],
+    "grammar": {
+      "title": "Days and at + time",
+      "explanation": "Days begin with capital letters. Use “at” with a clock time: at three o’clock.",
+      "examples": [
+        [
+          "What day is it today?",
+          "ما اليوم؟"
+        ],
+        [
+          "It’s Monday.",
+          "إنه يوم الاثنين."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: What day is the class?",
+        "أ: في أي يوم الحصة؟"
+      ],
+      [
+        "B: It’s on Sunday at five.",
+        "ب: يوم الأحد الساعة الخامسة."
+      ]
+    ],
+    "mistake": {
+      "wrong": "The class is in five.",
+      "correct": "The class is at five.",
+      "explanation": "Use “at” for a specific clock time."
+    },
+    "q": "Which word completes this? It’s ___ Tuesday.",
+    "answers": [
+      "a",
+      "on",
+      "at"
+    ],
+    "correct": 1,
+    "explain": "Use “on” with days: on Tuesday.",
+    "challenge": "Say today’s day and one time in your schedule.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-daily-routine-a1",
+    "title": "My Daily Routine",
+    "icon": "⏰",
+    "time": "5 min",
+    "desc": "Describe simple daily activities.",
+    "objective": "Use common verbs for a normal day.",
+    "phrases": [
+      [
+        "I wake up at seven.",
+        "أستيقظ الساعة السابعة."
+      ],
+      [
+        "I have breakfast.",
+        "أتناول الإفطار."
+      ],
+      [
+        "I go to work.",
+        "أذهب إلى العمل."
+      ],
+      [
+        "I go to bed at ten.",
+        "أنام الساعة العاشرة."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "wake up",
+        "يستيقظ"
+      ],
+      [
+        "breakfast",
+        "إفطار"
+      ],
+      [
+        "work",
+        "عمل"
+      ],
+      [
+        "go to bed",
+        "يذهب للنوم"
+      ]
+    ],
+    "grammar": {
+      "title": "Present simple: I / you",
+      "explanation": "Use the base verb with I and you to describe routines.",
+      "examples": [
+        [
+          "I wake up at seven.",
+          "أستيقظ الساعة السابعة."
+        ],
+        [
+          "I have breakfast.",
+          "أتناول الإفطار."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: What time do you wake up?",
+        "أ: متى تستيقظ؟"
+      ],
+      [
+        "B: I wake up at six.",
+        "ب: أستيقظ الساعة السادسة."
+      ]
+    ],
+    "mistake": {
+      "wrong": "I wakes up early.",
+      "correct": "I wake up early.",
+      "explanation": "Do not add -s with “I”."
+    },
+    "q": "Choose: I ___ breakfast at 8.",
+    "answers": [
+      "has",
+      "have",
+      "having"
+    ],
+    "correct": 1,
+    "explain": "Use “have” with “I”.",
+    "challenge": "Describe your morning in four simple sentences.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-present-simple-he-she",
+    "title": "He and She: Daily Life",
+    "icon": "👫",
+    "time": "5 min",
+    "desc": "Describe another person’s routine.",
+    "objective": "Use present simple with he and she.",
+    "phrases": [
+      [
+        "He works in a shop.",
+        "هو يعمل في متجر."
+      ],
+      [
+        "She studies English.",
+        "هي تدرس الإنجليزية."
+      ],
+      [
+        "He gets up early.",
+        "هو يستيقظ مبكراً."
+      ],
+      [
+        "She doesn’t work on Friday.",
+        "هي لا تعمل يوم الجمعة."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "work",
+        "يعمل"
+      ],
+      [
+        "study",
+        "يدرس"
+      ],
+      [
+        "get up",
+        "ينهض"
+      ],
+      [
+        "every day",
+        "كل يوم"
+      ]
+    ],
+    "grammar": {
+      "title": "Present simple: he / she",
+      "explanation": "Add -s or -es to most verbs with he/she/it. Use doesn’t + base verb for negatives.",
+      "examples": [
+        [
+          "He works in a shop.",
+          "هو يعمل في متجر."
+        ],
+        [
+          "She studies English.",
+          "هي تدرس الإنجليزية."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: Does she study English?",
+        "أ: هل تدرس الإنجليزية؟"
+      ],
+      [
+        "B: Yes, she does.",
+        "ب: نعم."
+      ]
+    ],
+    "mistake": {
+      "wrong": "She work at home.",
+      "correct": "She works at home.",
+      "explanation": "Add -s to the verb with “she”."
+    },
+    "q": "Choose: He ___ English every day.",
+    "answers": [
+      "study",
+      "studies",
+      "studying"
+    ],
+    "correct": 1,
+    "explain": "“Study” changes to “studies” with he/she/it.",
+    "challenge": "Describe another person’s routine.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-likes-dislikes",
+    "title": "Likes and Dislikes",
+    "icon": "❤️",
+    "time": "5 min",
+    "desc": "Say what you like and don’t like.",
+    "objective": "Talk about food, hobbies, and preferences.",
+    "phrases": [
+      [
+        "I like tea.",
+        "أحب الشاي."
+      ],
+      [
+        "I don’t like coffee.",
+        "لا أحب القهوة."
+      ],
+      [
+        "Do you like music?",
+        "هل تحب الموسيقى؟"
+      ],
+      [
+        "My favourite food is rice.",
+        "طعامي المفضل هو الأرز."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "like",
+        "يحب"
+      ],
+      [
+        "love",
+        "يعشق"
+      ],
+      [
+        "favourite",
+        "مفضّل"
+      ],
+      [
+        "music",
+        "موسيقى"
+      ]
+    ],
+    "grammar": {
+      "title": "Like / don’t like",
+      "explanation": "Use “I like” + noun or verb-ing. Use “I don’t like” for a negative.",
+      "examples": [
+        [
+          "I like tea.",
+          "أحب الشاي."
+        ],
+        [
+          "I don’t like coffee.",
+          "لا أحب القهوة."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: Do you like tea?",
+        "أ: هل تحب الشاي؟"
+      ],
+      [
+        "B: Yes, I do. I love it.",
+        "ب: نعم، أحبه كثيراً."
+      ]
+    ],
+    "mistake": {
+      "wrong": "I am like tea.",
+      "correct": "I like tea.",
+      "explanation": "“Like” is a main verb; do not add “am”."
+    },
+    "q": "Choose the correct sentence.",
+    "answers": [
+      "I am like football.",
+      "I likes football.",
+      "I like football."
+    ],
+    "correct": 2,
+    "explain": "Use “I like” with no “am”.",
+    "challenge": "Talk about two things you like and one you don’t like.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-food-drinks",
+    "title": "Food and Drinks",
+    "icon": "🍎",
+    "time": "5 min",
+    "desc": "Order simple food and drinks.",
+    "objective": "Name everyday food and express what you want.",
+    "phrases": [
+      [
+        "I’d like some water, please.",
+        "أريد بعض الماء من فضلك."
+      ],
+      [
+        "Can I have a sandwich?",
+        "هل يمكنني الحصول على شطيرة؟"
+      ],
+      [
+        "I’m hungry.",
+        "أنا جائع/ة."
+      ],
+      [
+        "I’m thirsty.",
+        "أنا عطشان/ة."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "bread",
+        "خبز"
+      ],
+      [
+        "water",
+        "ماء"
+      ],
+      [
+        "rice",
+        "أرز"
+      ],
+      [
+        "hungry",
+        "جائع"
+      ]
+    ],
+    "grammar": {
+      "title": "Some / a / an",
+      "explanation": "Use a/an with one countable item: a sandwich, an apple. Use some with plural or uncountable things.",
+      "examples": [
+        [
+          "I’d like some water, please.",
+          "أريد بعض الماء من فضلك."
+        ],
+        [
+          "Can I have a sandwich?",
+          "هل يمكنني الحصول على شطيرة؟"
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: What would you like?",
+        "أ: ماذا تريد؟"
+      ],
+      [
+        "B: I’d like some tea, please.",
+        "ب: أريد بعض الشاي من فضلك."
+      ]
+    ],
+    "mistake": {
+      "wrong": "I’d like a water.",
+      "correct": "I’d like some water.",
+      "explanation": "“Water” is uncountable in this general meaning."
+    },
+    "q": "Choose: I’d like ___ apple.",
+    "answers": [
+      "a",
+      "an",
+      "some"
+    ],
+    "correct": 1,
+    "explain": "Use “an” before a vowel sound in “apple”.",
+    "challenge": "Order a snack and a drink politely.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-home-rooms",
+    "title": "My Home",
+    "icon": "🏠",
+    "time": "5 min",
+    "desc": "Name rooms and say where things are.",
+    "objective": "Describe your home simply.",
+    "phrases": [
+      [
+        "I live in a flat.",
+        "أعيش في شقة."
+      ],
+      [
+        "The kitchen is small.",
+        "المطبخ صغير."
+      ],
+      [
+        "There is a sofa in the living room.",
+        "توجد أريكة في غرفة الجلوس."
+      ],
+      [
+        "My bedroom is upstairs.",
+        "غرفة نومي في الطابق العلوي."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "kitchen",
+        "مطبخ"
+      ],
+      [
+        "bedroom",
+        "غرفة نوم"
+      ],
+      [
+        "bathroom",
+        "حمام"
+      ],
+      [
+        "living room",
+        "غرفة جلوس"
+      ]
+    ],
+    "grammar": {
+      "title": "There is / there are",
+      "explanation": "Use “there is” for one thing and “there are” for more than one.",
+      "examples": [
+        [
+          "I live in a flat.",
+          "أعيش في شقة."
+        ],
+        [
+          "The kitchen is small.",
+          "المطبخ صغير."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: Is there a balcony?",
+        "أ: هل توجد شرفة؟"
+      ],
+      [
+        "B: Yes, there is.",
+        "ب: نعم، توجد."
+      ]
+    ],
+    "mistake": {
+      "wrong": "There are a kitchen.",
+      "correct": "There is a kitchen.",
+      "explanation": "Use “there is” with one room or object."
+    },
+    "q": "Complete: There ___ two bedrooms.",
+    "answers": [
+      "is",
+      "are",
+      "am"
+    ],
+    "correct": 1,
+    "explain": "Use “are” with plural “two bedrooms”.",
+    "challenge": "Describe three rooms in your home.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-there-is-are",
+    "title": "Things Around Town",
+    "icon": "🏙️",
+    "time": "5 min",
+    "desc": "Say what places are near your home.",
+    "objective": "Describe your neighbourhood.",
+    "phrases": [
+      [
+        "There is a shop near my home.",
+        "يوجد متجر قرب منزلي."
+      ],
+      [
+        "There are two cafés here.",
+        "يوجد مقهيان هنا."
+      ],
+      [
+        "Is there a bank nearby?",
+        "هل يوجد بنك قريب؟"
+      ],
+      [
+        "There isn’t a bus stop here.",
+        "لا توجد محطة حافلات هنا."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "shop",
+        "متجر"
+      ],
+      [
+        "bank",
+        "بنك"
+      ],
+      [
+        "café",
+        "مقهى"
+      ],
+      [
+        "bus stop",
+        "محطة حافلات"
+      ]
+    ],
+    "grammar": {
+      "title": "There is / are: questions and negatives",
+      "explanation": "Ask “Is there…?” for one thing and “Are there…?” for plural things.",
+      "examples": [
+        [
+          "There is a shop near my home.",
+          "يوجد متجر قرب منزلي."
+        ],
+        [
+          "There are two cafés here.",
+          "يوجد مقهيان هنا."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: Is there a pharmacy near here?",
+        "أ: هل توجد صيدلية قريبة؟"
+      ],
+      [
+        "B: Yes, there is, next to the bank.",
+        "ب: نعم، بجوار البنك."
+      ]
+    ],
+    "mistake": {
+      "wrong": "Are there a bank?",
+      "correct": "Is there a bank?",
+      "explanation": "Use “is” for one bank."
+    },
+    "q": "Choose the question about one café.",
+    "answers": [
+      "Are there a café?",
+      "Is there a café?",
+      "There is café?"
+    ],
+    "correct": 1,
+    "explain": "“Is there” is used with a singular noun.",
+    "challenge": "Name two places near your home.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-prepositions-place",
+    "title": "Where Is It?",
+    "icon": "📍",
+    "time": "5 min",
+    "desc": "Say where objects are.",
+    "objective": "Use common prepositions of place.",
+    "phrases": [
+      [
+        "The phone is on the table.",
+        "الهاتف على الطاولة."
+      ],
+      [
+        "The bag is under the chair.",
+        "الحقيبة تحت الكرسي."
+      ],
+      [
+        "The bank is next to the shop.",
+        "البنك بجوار المتجر."
+      ],
+      [
+        "It’s opposite the school.",
+        "إنه مقابل المدرسة."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "on",
+        "على"
+      ],
+      [
+        "under",
+        "تحت"
+      ],
+      [
+        "next to",
+        "بجوار"
+      ],
+      [
+        "opposite",
+        "مقابل"
+      ]
+    ],
+    "grammar": {
+      "title": "Prepositions of place",
+      "explanation": "Use a preposition to explain the position of a person or thing.",
+      "examples": [
+        [
+          "The phone is on the table.",
+          "الهاتف على الطاولة."
+        ],
+        [
+          "The bag is under the chair.",
+          "الحقيبة تحت الكرسي."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: Where are my keys?",
+        "أ: أين مفاتيحي؟"
+      ],
+      [
+        "B: They’re on the table.",
+        "ب: إنها على الطاولة."
+      ]
+    ],
+    "mistake": {
+      "wrong": "The bag is in the chair.",
+      "correct": "The bag is under the chair.",
+      "explanation": "“Under” means below something."
+    },
+    "q": "Where is something if it is below the table?",
+    "answers": [
+      "On the table",
+      "Under the table",
+      "Next the table"
+    ],
+    "correct": 1,
+    "explain": "“Under” means below.",
+    "challenge": "Describe where five objects are.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-have-got-possessions",
+    "title": "Things I Have",
+    "icon": "🎒",
+    "time": "5 min",
+    "desc": "Talk about things you own.",
+    "objective": "Say what you have and ask about possessions.",
+    "phrases": [
+      [
+        "I have a phone.",
+        "لدي هاتف."
+      ],
+      [
+        "Have you got a car?",
+        "هل لديك سيارة؟"
+      ],
+      [
+        "I haven’t got a computer.",
+        "ليس لدي حاسوب."
+      ],
+      [
+        "She has got a bicycle.",
+        "لديها دراجة."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "computer",
+        "حاسوب"
+      ],
+      [
+        "car",
+        "سيارة"
+      ],
+      [
+        "bicycle",
+        "دراجة"
+      ],
+      [
+        "own",
+        "يمتلك"
+      ]
+    ],
+    "grammar": {
+      "title": "Have got",
+      "explanation": "Use “I have got” or “I have”; use “has got” with he/she.",
+      "examples": [
+        [
+          "I have a phone.",
+          "لدي هاتف."
+        ],
+        [
+          "Have you got a car?",
+          "هل لديك سيارة؟"
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: Have you got a laptop?",
+        "أ: هل لديك حاسوب محمول؟"
+      ],
+      [
+        "B: No, I haven’t.",
+        "ب: لا، ليس لدي."
+      ]
+    ],
+    "mistake": {
+      "wrong": "She have got a car.",
+      "correct": "She has got a car.",
+      "explanation": "Use “has got” with she."
+    },
+    "q": "Choose: They ___ got a house.",
+    "answers": [
+      "has",
+      "have",
+      "is"
+    ],
+    "correct": 1,
+    "explain": "Use “have got” with “they”.",
+    "challenge": "Talk about three things you have and one you don’t have.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-can-cant",
+    "title": "What Can You Do?",
+    "icon": "💪",
+    "time": "5 min",
+    "desc": "Talk about simple abilities.",
+    "objective": "Use can and can’t for skills.",
+    "phrases": [
+      [
+        "I can swim.",
+        "أستطيع السباحة."
+      ],
+      [
+        "I can’t drive.",
+        "لا أستطيع القيادة."
+      ],
+      [
+        "Can you help me?",
+        "هل يمكنك مساعدتي؟"
+      ],
+      [
+        "Yes, I can.",
+        "نعم، أستطيع."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "swim",
+        "يسبح"
+      ],
+      [
+        "drive",
+        "يقود"
+      ],
+      [
+        "cook",
+        "يطبخ"
+      ],
+      [
+        "dance",
+        "يرقص"
+      ]
+    ],
+    "grammar": {
+      "title": "Can / can’t",
+      "explanation": "Use can + base verb. Do not add “to” or -s after can.",
+      "examples": [
+        [
+          "I can swim.",
+          "أستطيع السباحة."
+        ],
+        [
+          "I can’t drive.",
+          "لا أستطيع القيادة."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: Can you cook?",
+        "أ: هل تستطيع الطبخ؟"
+      ],
+      [
+        "B: Yes, I can.",
+        "ب: نعم، أستطيع."
+      ]
+    ],
+    "mistake": {
+      "wrong": "She can to swim.",
+      "correct": "She can swim.",
+      "explanation": "Use the base verb after “can”."
+    },
+    "q": "Choose: I can ___ English.",
+    "answers": [
+      "speaks",
+      "speak",
+      "to speak"
+    ],
+    "correct": 1,
+    "explain": "Use the base form “speak” after can.",
+    "challenge": "Say three things you can do and one you can’t do.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-present-continuous-intro",
+    "title": "What Are You Doing?",
+    "icon": "🎬",
+    "time": "5 min",
+    "desc": "Describe actions happening now.",
+    "objective": "Use the present continuous for actions now.",
+    "phrases": [
+      [
+        "I’m studying now.",
+        "أنا أدرس الآن."
+      ],
+      [
+        "What are you doing?",
+        "ماذا تفعل؟"
+      ],
+      [
+        "She’s cooking.",
+        "هي تطبخ الآن."
+      ],
+      [
+        "They’re watching TV.",
+        "هم يشاهدون التلفاز الآن."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "now",
+        "الآن"
+      ],
+      [
+        "studying",
+        "يدرس الآن"
+      ],
+      [
+        "cooking",
+        "يطبخ الآن"
+      ],
+      [
+        "watching",
+        "يشاهد الآن"
+      ]
+    ],
+    "grammar": {
+      "title": "Present continuous",
+      "explanation": "Use am/is/are + verb-ing for actions happening now.",
+      "examples": [
+        [
+          "I’m studying now.",
+          "أنا أدرس الآن."
+        ],
+        [
+          "What are you doing?",
+          "ماذا تفعل؟"
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: What are you doing?",
+        "أ: ماذا تفعل؟"
+      ],
+      [
+        "B: I’m learning English.",
+        "ب: أتعلم الإنجليزية."
+      ]
+    ],
+    "mistake": {
+      "wrong": "I studying now.",
+      "correct": "I’m studying now.",
+      "explanation": "Use am/is/are before the -ing verb."
+    },
+    "q": "Choose: She ___ cooking now.",
+    "answers": [
+      "are",
+      "am",
+      "is"
+    ],
+    "correct": 2,
+    "explain": "Use “is” with she.",
+    "challenge": "Describe what you and another person are doing now.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-weather-seasons",
+    "title": "Weather",
+    "icon": "🌦️",
+    "time": "5 min",
+    "desc": "Describe today’s weather.",
+    "objective": "Use basic weather words and questions.",
+    "phrases": [
+      [
+        "It’s hot today.",
+        "الجو حار اليوم."
+      ],
+      [
+        "It’s raining.",
+        "إنها تمطر."
+      ],
+      [
+        "What’s the weather like?",
+        "كيف الطقس؟"
+      ],
+      [
+        "I like cool weather.",
+        "أحب الطقس المعتدل."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "hot",
+        "حار"
+      ],
+      [
+        "cold",
+        "بارد"
+      ],
+      [
+        "sunny",
+        "مشمس"
+      ],
+      [
+        "rainy",
+        "ممطر"
+      ]
+    ],
+    "grammar": {
+      "title": "It is + weather adjective",
+      "explanation": "Use “It’s” to describe weather: It’s sunny, cold, or windy.",
+      "examples": [
+        [
+          "It’s hot today.",
+          "الجو حار اليوم."
+        ],
+        [
+          "It’s raining.",
+          "إنها تمطر."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: What’s the weather like?",
+        "أ: كيف الطقس؟"
+      ],
+      [
+        "B: It’s sunny and hot.",
+        "ب: الجو مشمس وحار."
+      ]
+    ],
+    "mistake": {
+      "wrong": "Today is hot weather.",
+      "correct": "It’s hot today.",
+      "explanation": "“It’s hot today” is a natural simple sentence."
+    },
+    "q": "Choose the correct weather sentence.",
+    "answers": [
+      "It sunny.",
+      "It’s sunny.",
+      "It are sunny."
+    ],
+    "correct": 1,
+    "explain": "Use “it is” or “it’s” before the adjective.",
+    "challenge": "Describe the weather today in two sentences.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-clothes-colours",
+    "title": "Clothes and Colours",
+    "icon": "👕",
+    "time": "5 min",
+    "desc": "Describe clothes and colours.",
+    "objective": "Ask about clothes and say what you are wearing.",
+    "phrases": [
+      [
+        "I’m wearing a blue shirt.",
+        "أرتدي قميصاً أزرق."
+      ],
+      [
+        "What colour is it?",
+        "ما لونه؟"
+      ],
+      [
+        "These shoes are black.",
+        "هذه الأحذية سوداء."
+      ],
+      [
+        "I need a jacket.",
+        "أحتاج إلى سترة."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "shirt",
+        "قميص"
+      ],
+      [
+        "shoes",
+        "حذاء"
+      ],
+      [
+        "jacket",
+        "سترة"
+      ],
+      [
+        "blue",
+        "أزرق"
+      ]
+    ],
+    "grammar": {
+      "title": "Adjectives before nouns",
+      "explanation": "Put colour before the thing: a red dress, black shoes. Adjectives do not change for plural.",
+      "examples": [
+        [
+          "I’m wearing a blue shirt.",
+          "أرتدي قميصاً أزرق."
+        ],
+        [
+          "What colour is it?",
+          "ما لونه؟"
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: What are you wearing?",
+        "أ: ماذا ترتدي؟"
+      ],
+      [
+        "B: I’m wearing a white shirt.",
+        "ب: أرتدي قميصاً أبيض."
+      ]
+    ],
+    "mistake": {
+      "wrong": "A shirt blue.",
+      "correct": "A blue shirt.",
+      "explanation": "Put the colour adjective before the noun."
+    },
+    "q": "Choose the correct phrase.",
+    "answers": [
+      "shoes black",
+      "black shoes",
+      "blacks shoes"
+    ],
+    "correct": 1,
+    "explain": "Use adjective + noun: black shoes.",
+    "challenge": "Describe what you are wearing today.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-shopping-prices",
+    "title": "Shopping and Prices",
+    "icon": "🛍️",
+    "time": "5 min",
+    "desc": "Ask how much things cost.",
+    "objective": "Use simple shopping questions.",
+    "phrases": [
+      [
+        "How much is this?",
+        "بكم هذا؟"
+      ],
+      [
+        "It’s ten pounds.",
+        "سعره عشرة جنيهات."
+      ],
+      [
+        "Can I try it on?",
+        "هل يمكنني تجربته؟"
+      ],
+      [
+        "I’m just looking, thank you.",
+        "أنا أتفرج فقط، شكراً."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "price",
+        "سعر"
+      ],
+      [
+        "cheap",
+        "رخيص"
+      ],
+      [
+        "expensive",
+        "غالي"
+      ],
+      [
+        "size",
+        "مقاس"
+      ]
+    ],
+    "grammar": {
+      "title": "How much is / are",
+      "explanation": "Use “How much is…?” for one item and “How much are…?” for plural items.",
+      "examples": [
+        [
+          "How much is this?",
+          "بكم هذا؟"
+        ],
+        [
+          "It’s ten pounds.",
+          "سعره عشرة جنيهات."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: How much are these shoes?",
+        "أ: بكم هذه الأحذية؟"
+      ],
+      [
+        "B: They’re twenty dinars.",
+        "ب: سعرها عشرون ديناراً."
+      ]
+    ],
+    "mistake": {
+      "wrong": "How much these shoes is?",
+      "correct": "How much are these shoes?",
+      "explanation": "Use “are” with plural “shoes”."
+    },
+    "q": "Choose the correct question about one bag.",
+    "answers": [
+      "How much are this bag?",
+      "How much is this bag?",
+      "How many is this bag?"
+    ],
+    "correct": 1,
+    "explain": "Use “is” with one bag.",
+    "challenge": "Practise buying one item and asking its price.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-food-order-cafe",
+    "title": "At a Café",
+    "icon": "☕",
+    "time": "5 min",
+    "desc": "Order a drink or snack politely.",
+    "objective": "Use polite phrases in a café.",
+    "phrases": [
+      [
+        "Could I have a coffee, please?",
+        "هل يمكنني الحصول على قهوة من فضلك؟"
+      ],
+      [
+        "For here or to go?",
+        "هنا أم سفري؟"
+      ],
+      [
+        "To go, please.",
+        "سفري من فضلك."
+      ],
+      [
+        "That’s all, thank you.",
+        "هذا كل شيء، شكراً."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "menu",
+        "قائمة الطعام"
+      ],
+      [
+        "coffee",
+        "قهوة"
+      ],
+      [
+        "tea",
+        "شاي"
+      ],
+      [
+        "bill",
+        "فاتورة"
+      ]
+    ],
+    "grammar": {
+      "title": "Would like / could I",
+      "explanation": "Use “Could I have…?” or “I’d like…” to order politely.",
+      "examples": [
+        [
+          "Could I have a coffee, please?",
+          "هل يمكنني الحصول على قهوة من فضلك؟"
+        ],
+        [
+          "For here or to go?",
+          "هنا أم سفري؟"
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: What would you like?",
+        "أ: ماذا تريد؟"
+      ],
+      [
+        "B: Could I have tea, please?",
+        "ب: هل يمكنني الحصول على شاي؟"
+      ]
+    ],
+    "mistake": {
+      "wrong": "Give me coffee.",
+      "correct": "Could I have a coffee, please?",
+      "explanation": "A polite request sounds friendlier than a direct command."
+    },
+    "q": "Which is the most polite order?",
+    "answers": [
+      "Coffee now!",
+      "Give coffee.",
+      "Could I have a coffee, please?"
+    ],
+    "correct": 2,
+    "explain": "“Could I have… please?” is a polite request.",
+    "challenge": "Role-play ordering a drink and thanking the server.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-transport",
+    "title": "Getting Around",
+    "icon": "🚌",
+    "time": "5 min",
+    "desc": "Talk about transport and simple journeys.",
+    "objective": "Name transport and ask how to get somewhere.",
+    "phrases": [
+      [
+        "I go to work by bus.",
+        "أذهب إلى العمل بالحافلة."
+      ],
+      [
+        "Where is the bus stop?",
+        "أين محطة الحافلات؟"
+      ],
+      [
+        "I walk to school.",
+        "أمشي إلى المدرسة."
+      ],
+      [
+        "Is it far?",
+        "هل هو بعيد؟"
+      ]
+    ],
+    "vocabulary": [
+      [
+        "bus",
+        "حافلة"
+      ],
+      [
+        "taxi",
+        "سيارة أجرة"
+      ],
+      [
+        "walk",
+        "يمشي"
+      ],
+      [
+        "station",
+        "محطة"
+      ]
+    ],
+    "grammar": {
+      "title": "By + transport",
+      "explanation": "Use “by bus/car/taxi” without “a”. Use “on foot” for walking.",
+      "examples": [
+        [
+          "I go to work by bus.",
+          "أذهب إلى العمل بالحافلة."
+        ],
+        [
+          "Where is the bus stop?",
+          "أين محطة الحافلات؟"
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: How do you go to work?",
+        "أ: كيف تذهب إلى العمل؟"
+      ],
+      [
+        "B: I go by bus.",
+        "ب: أذهب بالحافلة."
+      ]
+    ],
+    "mistake": {
+      "wrong": "I go by a bus.",
+      "correct": "I go by bus.",
+      "explanation": "Do not usually use “a” after “by” + transport."
+    },
+    "q": "Choose: I travel ___ taxi.",
+    "answers": [
+      "by",
+      "on",
+      "at"
+    ],
+    "correct": 0,
+    "explain": "Say “by taxi”.",
+    "challenge": "Explain how you travel to work, class, or the shops.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-directions",
+    "title": "Asking for Directions",
+    "icon": "🧭",
+    "time": "5 min",
+    "desc": "Ask where a place is and understand simple directions.",
+    "objective": "Use basic direction words.",
+    "phrases": [
+      [
+        "Excuse me, where is the bank?",
+        "عذراً، أين البنك؟"
+      ],
+      [
+        "Go straight ahead.",
+        "امشِ إلى الأمام."
+      ],
+      [
+        "Turn left.",
+        "انعطف يساراً."
+      ],
+      [
+        "It’s on your right.",
+        "إنه على يمينك."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "left",
+        "يسار"
+      ],
+      [
+        "right",
+        "يمين"
+      ],
+      [
+        "straight",
+        "مستقيماً"
+      ],
+      [
+        "corner",
+        "ناصية / زاوية"
+      ]
+    ],
+    "grammar": {
+      "title": "Imperatives for directions",
+      "explanation": "Use the base verb to give directions: go, turn, cross.",
+      "examples": [
+        [
+          "Excuse me, where is the bank?",
+          "عذراً، أين البنك؟"
+        ],
+        [
+          "Go straight ahead.",
+          "امشِ إلى الأمام."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: How do I get to the bank?",
+        "أ: كيف أصل إلى البنك؟"
+      ],
+      [
+        "B: Go straight and turn left.",
+        "ب: امشِ للأمام ثم انعطف يساراً."
+      ]
+    ],
+    "mistake": {
+      "wrong": "Turn to left.",
+      "correct": "Turn left.",
+      "explanation": "You do not need “to” before left or right."
+    },
+    "q": "What do you say to tell someone to move forward?",
+    "answers": [
+      "Go straight ahead.",
+      "Go forward to.",
+      "Straight going."
+    ],
+    "correct": 0,
+    "explain": "“Go straight ahead” gives a simple direction.",
+    "challenge": "Give directions from your home to a nearby place.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-feelings-health",
+    "title": "Feelings and Simple Health",
+    "icon": "🙂",
+    "time": "5 min",
+    "desc": "Say how you feel and describe simple problems.",
+    "objective": "Use basic feeling words and ask how someone is.",
+    "phrases": [
+      [
+        "How are you?",
+        "كيف حالك؟"
+      ],
+      [
+        "I’m tired.",
+        "أنا متعب/ة."
+      ],
+      [
+        "I don’t feel well.",
+        "لا أشعر أنني بخير."
+      ],
+      [
+        "I have a headache.",
+        "لدي صداع."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "happy",
+        "سعيد"
+      ],
+      [
+        "tired",
+        "متعب"
+      ],
+      [
+        "thirsty",
+        "عطشان"
+      ],
+      [
+        "headache",
+        "صداع"
+      ]
+    ],
+    "grammar": {
+      "title": "Be + adjectives; have + symptoms",
+      "explanation": "Use “I’m” before feeling adjectives and “I have” for many symptoms.",
+      "examples": [
+        [
+          "How are you?",
+          "كيف حالك؟"
+        ],
+        [
+          "I’m tired.",
+          "أنا متعب/ة."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: Are you okay?",
+        "أ: هل أنت بخير؟"
+      ],
+      [
+        "B: I’m tired, but I’m okay.",
+        "ب: أنا متعب، لكنني بخير."
+      ]
+    ],
+    "mistake": {
+      "wrong": "I have tired.",
+      "correct": "I’m tired.",
+      "explanation": "Use “be” with adjectives such as tired or happy."
+    },
+    "q": "Choose: I ___ happy today.",
+    "answers": [
+      "am",
+      "have",
+      "do"
+    ],
+    "correct": 0,
+    "explain": "Use “am” with “I” + adjective.",
+    "challenge": "Say how you feel today and why.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-simple-past-was-were",
+    "title": "Yesterday: Was and Were",
+    "icon": "🕰️",
+    "time": "5 min",
+    "desc": "Say where you were and how you felt yesterday.",
+    "objective": "Use was and were in simple past statements.",
+    "phrases": [
+      [
+        "I was at home yesterday.",
+        "كنت في المنزل أمس."
+      ],
+      [
+        "She was tired.",
+        "كانت متعبة."
+      ],
+      [
+        "We were at work.",
+        "كنا في العمل."
+      ],
+      [
+        "Were you busy?",
+        "هل كنت مشغولاً؟"
+      ]
+    ],
+    "vocabulary": [
+      [
+        "yesterday",
+        "أمس"
+      ],
+      [
+        "busy",
+        "مشغول"
+      ],
+      [
+        "at home",
+        "في المنزل"
+      ],
+      [
+        "last night",
+        "الليلة الماضية"
+      ]
+    ],
+    "grammar": {
+      "title": "Was / were",
+      "explanation": "Use was with I/he/she/it and were with you/we/they.",
+      "examples": [
+        [
+          "I was at home yesterday.",
+          "كنت في المنزل أمس."
+        ],
+        [
+          "She was tired.",
+          "كانت متعبة."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: Were you at home yesterday?",
+        "أ: هل كنت في المنزل أمس؟"
+      ],
+      [
+        "B: Yes, I was.",
+        "ب: نعم."
+      ]
+    ],
+    "mistake": {
+      "wrong": "I were tired.",
+      "correct": "I was tired.",
+      "explanation": "Use “was” with “I”."
+    },
+    "q": "Choose: They ___ at home yesterday.",
+    "answers": [
+      "was",
+      "were",
+      "are"
+    ],
+    "correct": 1,
+    "explain": "Use “were” with “they”.",
+    "challenge": "Say where you were yesterday and how you felt.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-weekend-plans",
+    "title": "Weekend Plans",
+    "icon": "📅",
+    "time": "5 min",
+    "desc": "Talk about simple plans.",
+    "objective": "Say what you want or plan to do.",
+    "phrases": [
+      [
+        "I’m going to visit my friend.",
+        "سأزور صديقي."
+      ],
+      [
+        "What are you going to do?",
+        "ماذا ستفعل؟"
+      ],
+      [
+        "I want to relax.",
+        "أريد الاسترخاء."
+      ],
+      [
+        "Maybe we can meet.",
+        "ربما يمكننا اللقاء."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "weekend",
+        "عطلة نهاية الأسبوع"
+      ],
+      [
+        "visit",
+        "يزور"
+      ],
+      [
+        "relax",
+        "يسترخي"
+      ],
+      [
+        "plan",
+        "خطة"
+      ]
+    ],
+    "grammar": {
+      "title": "Want to + verb; going to",
+      "explanation": "Use “want to” + base verb. Use “be going to” for a plan.",
+      "examples": [
+        [
+          "I’m going to visit my friend.",
+          "سأزور صديقي."
+        ],
+        [
+          "What are you going to do?",
+          "ماذا ستفعل؟"
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: What are you going to do on Friday?",
+        "أ: ماذا ستفعل يوم الجمعة؟"
+      ],
+      [
+        "B: I’m going to visit my family.",
+        "ب: سأزور أسرتي."
+      ]
+    ],
+    "mistake": {
+      "wrong": "I want visit my family.",
+      "correct": "I want to visit my family.",
+      "explanation": "Use “to” after “want” before another verb."
+    },
+    "q": "Complete: I want ___ learn English.",
+    "answers": [
+      "for",
+      "to",
+      "at"
+    ],
+    "correct": 1,
+    "explain": "The pattern is “want to + verb”.",
+    "challenge": "Tell someone two plans for your next day off.",
+    "level": "A1"
+  },
+  {
+    "id": "a1-review-first-conversation",
+    "title": "Your First Full Conversation",
+    "icon": "💬",
+    "time": "5 min",
+    "desc": "Combine what you learned in a short conversation.",
+    "objective": "Introduce yourself, talk about routines, likes, and simple plans.",
+    "phrases": [
+      [
+        "Let me introduce myself.",
+        "دعني أعرّف بنفسي."
+      ],
+      [
+        "I usually…",
+        "عادةً أنا…"
+      ],
+      [
+        "I like…",
+        "أحب…"
+      ],
+      [
+        "I’m going to…",
+        "سوف…"
+      ]
+    ],
+    "vocabulary": [
+      [
+        "usually",
+        "عادةً"
+      ],
+      [
+        "because",
+        "لأن"
+      ],
+      [
+        "also",
+        "أيضاً"
+      ],
+      [
+        "conversation",
+        "محادثة"
+      ]
+    ],
+    "grammar": {
+      "title": "Review: present simple and going to",
+      "explanation": "Use present simple for routines and “going to” for plans. Connect ideas with “and” or “because”.",
+      "examples": [
+        [
+          "Let me introduce myself.",
+          "دعني أعرّف بنفسي."
+        ],
+        [
+          "I usually…",
+          "عادةً أنا…"
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: Tell me about yourself.",
+        "أ: أخبرني عن نفسك."
+      ],
+      [
+        "B: I’m Mona. I’m from Sudan. I study English, and I like reading.",
+        "ب: أنا منى. أنا من السودان. أدرس الإنجليزية وأحب القراءة."
+      ]
+    ],
+    "mistake": {
+      "wrong": "I am like reading.",
+      "correct": "I like reading.",
+      "explanation": "Use “like” as a main verb, without “am”."
+    },
+    "q": "Which sentence gives basic personal information correctly?",
+    "answers": [
+      "I from Sudan and like tea.",
+      "I’m from Sudan, and I like tea.",
+      "I am from Sudan and I am like tea."
+    ],
+    "correct": 1,
+    "explain": "The second sentence uses “I’m from” and “I like” correctly.",
+    "challenge": "Speak for 60 seconds: introduce yourself, describe your routine, and share one plan.",
+    "level": "A1"
+  }
+,
+  // Existing A2 course: 30 lessons (preserved)
+{
+    level: "A2",
     id: "introducing-yourself",
     title: "Introducing Yourself",
     icon: "👋",
@@ -58,6 +2553,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "daily-routines",
     title: "Daily Routines",
     icon: "☀️",
@@ -106,6 +2602,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "talking-about-family",
     title: "Talking About Family",
     icon: "👨‍👩‍👧",
@@ -158,6 +2655,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "describing-people",
     title: "Describing People",
     icon: "😊",
@@ -206,6 +2704,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "a-typical-week",
     title: "A Typical Week",
     icon: "🗓️",
@@ -254,6 +2753,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "food-and-meals",
     title: "Food and Meals",
     icon: "🍽️",
@@ -306,6 +2806,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "at-the-supermarket",
     title: "At the Supermarket",
     icon: "🛒",
@@ -358,6 +2859,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "cooking-at-home",
     title: "Cooking at Home",
     icon: "🍳",
@@ -410,6 +2912,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "my-home",
     title: "My Home",
     icon: "🏠",
@@ -458,6 +2961,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "around-town",
     title: "Around Town",
     icon: "🏙️",
@@ -506,6 +3010,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "asking-for-directions",
     title: "Asking for Directions",
     icon: "🧭",
@@ -554,6 +3059,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "getting-around",
     title: "Getting Around",
     icon: "🚌",
@@ -602,6 +3108,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "at-a-cafe",
     title: "At a Café",
     icon: "☕",
@@ -654,6 +3161,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "making-plans",
     title: "Making Plans",
     icon: "📅",
@@ -706,6 +3214,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "on-the-phone",
     title: "On the Phone",
     icon: "📱",
@@ -754,6 +3263,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "asking-for-help",
     title: "Asking for Help",
     icon: "🤝",
@@ -806,6 +3316,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "apologies-and-problems",
     title: "Apologies and Problems",
     icon: "🙏",
@@ -854,6 +3365,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "sharing-opinions",
     title: "Sharing Opinions",
     icon: "💬",
@@ -906,6 +3418,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "talking-about-yesterday",
     title: "Talking About Yesterday",
     icon: "🌙",
@@ -954,6 +3467,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "past-events-and-memories",
     title: "Past Events and Memories",
     icon: "📸",
@@ -1002,6 +3516,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "last-weekend",
     title: "Last Weekend",
     icon: "🌴",
@@ -1054,6 +3569,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "holiday-experiences",
     title: "Holiday Experiences",
     icon: "✈️",
@@ -1102,6 +3618,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "life-experiences",
     title: "Life Experiences",
     icon: "🌟",
@@ -1150,6 +3667,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "future-plans",
     title: "Future Plans",
     icon: "🔮",
@@ -1198,6 +3716,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "weather-and-clothes",
     title: "Weather and Clothes",
     icon: "🌦️",
@@ -1246,6 +3765,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "health-and-feeling-unwell",
     title: "Health and Feeling Unwell",
     icon: "🩺",
@@ -1298,6 +3818,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "work-and-study",
     title: "Work and Study",
     icon: "💼",
@@ -1346,6 +3867,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "technology-in-daily-life",
     title: "Technology in Daily Life",
     icon: "💻",
@@ -1394,6 +3916,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "travel-and-check-in",
     title: "Travel and Check-in",
     icon: "🧳",
@@ -1446,6 +3969,7 @@ const lessons = [
   },
 
   {
+    level: "A2",
     id: "review-and-real-life-challenge",
     title: "Review and Real-Life Challenge",
     icon: "🏆",
@@ -1496,14 +4020,14 @@ const lessons = [
     explain: "Use the past simple went with yesterday.",
     challenge: "Speak for one minute: introduce yourself, describe yesterday, and explain your plans for tomorrow."
   }
-];
+ ];
 
 /* ------------------------------------------------------------------ */
 /* Helpers                                                              */
 /* ------------------------------------------------------------------ */
 
 const STORAGE_KEY = "masar-progress";
-const EXPECTED_LESSON_COUNT = 30;
+const EXPECTED_LESSON_COUNT = 60;
 
 // Order of the original 5-lesson version. Older saved progress stored lesson
 // positions (0–4); these IDs let us convert it to the new ID-based format.
@@ -1619,7 +4143,7 @@ function render() {
     const unlocked = i === 0 || done || isDone(lessons[i - 1].id);
     return `<button type="button" class="lesson-card${done ? " done" : ""}${unlocked ? "" : " locked"}"${unlocked ? "" : " disabled"} data-index="${i}">` +
       `<div class="lesson-icon">${done ? "✓" : unlocked ? esc(l.icon) : "🔒"}</div>` +
-      `<div class="lesson-meta"><small>LESSON ${String(i + 1).padStart(2, "0")} · ${esc(l.time.toUpperCase())}</small>` +
+      `<div class="lesson-meta"><small>${esc(l.level || "A2")} · LESSON ${String(i + 1).padStart(2, "0")} · ${esc(l.time.toUpperCase())}</small>` +
       `<strong>${esc(l.title)}</strong>` +
       `<p>${done ? "Completed — revise anytime" : unlocked ? esc(l.desc) : "Complete the previous lesson to unlock"}</p></div>` +
       `<span class="lesson-arrow">${done ? "✓" : unlocked ? "→" : "·"}</span></button>`;
@@ -1685,7 +4209,7 @@ function openLesson(i) {
   activeLesson = i;
   selected = null;
   quizChecked = false;
-  setText("lesson-unit", `LESSON ${String(i + 1).padStart(2, "0")}`);
+  setText("lesson-unit", `${l.level || "A2"} · LESSON ${String(l.level === "A1" ? i + 1 : i - 29).padStart(2, "0")}`);
   const content = $("lesson-content");
   content.innerHTML = lessonHTML(l);
   const dialog = $("lesson-dialog");
