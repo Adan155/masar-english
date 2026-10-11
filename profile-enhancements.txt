@@ -1,0 +1,172 @@
+/* MASAR English Journey — Profile & Level Enhancements
+   Additive enhancement: keeps existing lesson data and progress logic intact.
+   Student profile and avatar are stored on this device only. */
+(() => {
+  const PROFILE_KEY = 'masar-student-profile-v1';
+  let selectedLevel = 'ALL';
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+
+  function readProfile() {
+    try {
+      const value = JSON.parse(localStorage.getItem(PROFILE_KEY) || '{}');
+      return { name: typeof value.name === 'string' ? value.name : '', photo: typeof value.photo === 'string' ? value.photo : '' };
+    } catch (_) { return { name: '', photo: '' }; }
+  }
+  function writeProfile(profile) {
+    try { localStorage.setItem(PROFILE_KEY, JSON.stringify(profile)); return true; }
+    catch (_) { if (typeof toast === 'function') toast('Could not save the photo. Try a smaller image.'); return false; }
+  }
+
+  function ensureLevelFilters() {
+    const path = $('#lesson-path');
+    if (!path || $('#masar-level-filters')) return;
+    const bar = document.createElement('div');
+    bar.id = 'masar-level-filters';
+    bar.className = 'masar-level-filters';
+    bar.setAttribute('aria-label', 'Filter lessons by level');
+    bar.innerHTML = `
+      <button type="button" class="masar-filter active" data-level="ALL">All lessons <span>${lessons.length}</span></button>
+      <button type="button" class="masar-filter" data-level="A1">A1 Beginner <span>${lessons.filter(l => l.level === 'A1').length}</span></button>
+      <button type="button" class="masar-filter" data-level="A2">A2 Elementary <span>${lessons.filter(l => l.level === 'A2').length}</span></button>`;
+    path.parentNode.insertBefore(bar, path);
+    bar.addEventListener('click', event => {
+      const button = event.target.closest('[data-level]');
+      if (!button) return;
+      selectedLevel = button.dataset.level;
+      bar.querySelectorAll('.masar-filter').forEach(item => item.classList.toggle('active', item === button));
+      applyLevelFilter();
+    });
+  }
+  function applyLevelFilter() {
+    const path = $('#lesson-path');
+    if (!path || typeof lessons === 'undefined') return;
+    path.querySelectorAll('.lesson-card').forEach(card => {
+      const lesson = lessons[Number(card.dataset.index)];
+      card.hidden = !!(selectedLevel !== 'ALL' && lesson && lesson.level !== selectedLevel);
+    });
+  }
+
+  function achievementsHTML() {
+    const completed = lessons.filter(l => isDone(l.id));
+    const a1 = lessons.filter(l => l.level === 'A1');
+    const a2 = lessons.filter(l => l.level === 'A2');
+    const badges = [
+      ['🌱', 'First Step', 'Complete your first lesson', completed.length >= 1],
+      ['📚', '10 Lessons', 'Complete 10 lessons', completed.length >= 10],
+      ['🔥', '3-Day Streak', 'Learn on 3 consecutive days', state.streak >= 3],
+      ['🌟', 'A1 Finisher', 'Complete every A1 lesson', a1.length > 0 && a1.every(l => isDone(l.id))],
+      ['🏅', 'A2 Finisher', 'Complete every A2 lesson', a2.length > 0 && a2.every(l => isDone(l.id))]
+    ];
+    return badges.map(([icon, title, desc, earned]) => `<div class="masar-badge ${earned ? 'earned' : 'locked-badge'}"><span class="masar-badge-icon">${icon}</span><div><strong>${title}</strong><small>${desc}</small></div><span class="masar-badge-status">${earned ? '✓ Earned' : '🔒'}</span></div>`).join('');
+  }
+
+  function renderProfile() {
+    const old = $('.profile-panel');
+    if (old) old.remove();
+    const profile = readProfile();
+    const doneCount = lessons.filter(l => isDone(l.id)).length;
+    const panel = document.createElement('section');
+    panel.className = 'profile-panel masar-profile-panel';
+    panel.innerHTML = `
+      <p class="eyebrow">YOUR LEARNING SPACE</p>
+      <h2>My MASAR profile</h2>
+      <div class="masar-profile-card">
+        <div class="masar-avatar-wrap">
+          <img class="masar-avatar" id="masar-avatar-preview" src="${profile.photo || ''}" alt="Student profile photo" ${profile.photo ? '' : 'hidden'}>
+          <div class="masar-avatar-placeholder" id="masar-avatar-placeholder" ${profile.photo ? 'hidden' : ''}>👤</div>
+        </div>
+        <div class="masar-profile-fields">
+          <label for="masar-student-name">Your name / اسمك</label>
+          <input id="masar-student-name" type="text" maxlength="50" autocomplete="name" placeholder="Enter your name" value="${esc(profile.name)}">
+          <label class="masar-upload-label" for="masar-student-photo">📷 Choose a profile photo</label>
+          <input id="masar-student-photo" class="masar-file-input" type="file" accept="image/*">
+          <button type="button" class="masar-save-profile" id="masar-save-profile">Save profile</button>
+          <p class="masar-local-note">Your profile is saved on this device only.</p>
+        </div>
+      </div>
+      <div class="masar-profile-stats">
+        <div><span>⚡ XP points</span><strong>${Number(state.xp) || 0}</strong></div>
+        <div><span>📘 Lessons done</span><strong>${doneCount}/${lessons.length}</strong></div>
+        <div><span>🔥 Learning streak</span><strong>${Number(state.streak) || 0} days</strong></div>
+      </div>
+      <div class="masar-level-summary">
+        <div><span>A1 · Beginner</span><strong>${lessons.filter(l => l.level === 'A1' && isDone(l.id)).length}/${lessons.filter(l => l.level === 'A1').length}</strong></div>
+        <div><span>A2 · Elementary</span><strong>${lessons.filter(l => l.level === 'A2' && isDone(l.id)).length}/${lessons.filter(l => l.level === 'A2').length}</strong></div>
+      </div>
+      <h3 class="masar-achievements-title">🏆 My achievements</h3>
+      <div class="masar-achievements">${achievementsHTML()}</div>
+      <p class="masar-local-note masar-privacy-note">Note: student accounts and a shared leaderboard are not connected yet. Progress and profile are currently stored on this device.</p>`;
+    const main = $('main');
+    if (main) {
+      main.appendChild(panel);
+      panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  function handleProfileClick(event) {
+    const button = event.target.closest('.nav-item');
+    if (!button || button.dataset.nav !== 'profile') return;
+    event.preventDefault();
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+    document.querySelectorAll('.nav-item').forEach(item => item.classList.toggle('active', item === button));
+    renderProfile();
+  }
+
+  // Capture profile navigation before the original demo profile handler.
+  document.addEventListener('click', handleProfileClick, true);
+
+  document.addEventListener('click', event => {
+    if (event.target.closest('#masar-save-profile')) {
+      const profile = readProfile();
+      profile.name = ($('#masar-student-name')?.value || '').trim().slice(0, 50);
+      if (writeProfile(profile)) {
+        if (typeof toast === 'function') toast(profile.name ? `Profile saved. Welcome, ${profile.name}!` : 'Profile saved.');
+        renderProfile();
+      }
+    }
+  });
+
+  document.addEventListener('change', event => {
+    if (event.target.id !== 'masar-student-photo') return;
+    const file = event.target.files && event.target.files[0];
+    if (!file) return;
+    if (!file.type.startsWith('image/')) { if (typeof toast === 'function') toast('Please choose an image file.'); return; }
+    const reader = new FileReader();
+    reader.onload = () => {
+      const image = new Image();
+      image.onload = () => {
+        const canvas = document.createElement('canvas');
+        const size = 256;
+        const scale = Math.min(size / image.width, size / image.height, 1);
+        canvas.width = Math.max(1, Math.round(image.width * scale));
+        canvas.height = Math.max(1, Math.round(image.height * scale));
+        canvas.getContext('2d').drawImage(image, 0, 0, canvas.width, canvas.height);
+        const photo = canvas.toDataURL('image/jpeg', 0.78);
+        const profile = readProfile(); profile.photo = photo;
+        if (writeProfile(profile)) {
+          const preview = $('#masar-avatar-preview');
+          const placeholder = $('#masar-avatar-placeholder');
+          if (preview) { preview.src = photo; preview.hidden = false; }
+          if (placeholder) placeholder.hidden = true;
+          if (typeof toast === 'function') toast('Photo added. Tap Save profile to save your name too.');
+        }
+      };
+      image.onerror = () => { if (typeof toast === 'function') toast('Could not read this image. Try another photo.'); };
+      image.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+  });
+
+  // Wrap the existing render function so level filters remain applied after lessons update.
+  if (typeof render === 'function') {
+    const originalRender = render;
+    render = function() {
+      originalRender();
+      ensureLevelFilters();
+      applyLevelFilter();
+    };
+    render();
+  }
+})();
