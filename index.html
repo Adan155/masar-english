@@ -8,6 +8,7 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/app-icon.png">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="profile-enhancements.css">
   <title>MASAR — English Journey</title>
 </head>
 <body>
@@ -15,38 +16,34 @@
     <div class="brand"><img src="masar-logo.png" alt="MASAR logo"><div><strong>MASAR</strong><small>YOUR ENGLISH JOURNEY</small></div></div>
     <div class="stats"><span title="Experience points">⚡ <b id="xp">0</b> XP</span><span title="Learning streak">🔥 <b id="streak">0</b></span></div>
   </header>
-
   <main>
     <section class="welcome">
       <p class="eyebrow">YOUR NEXT STEP STARTS HERE</p>
       <h1>Small steps.<br><span>Real English.</span></h1>
       <p class="sub">Learn useful English, practise every day, and build your confidence one lesson at a time.</p>
-      <div class="level-row"><span class="pill">A2 · Beginner pathway</span><span id="progress-label">0 of 5 lessons complete</span></div>
+      <div class="level-row"><span class="pill">A1 + A2 · Beginner pathways</span><span id="progress-label">0 of 60 lessons complete</span></div>
       <div class="progress"><div id="progress-bar"></div></div>
     </section>
-
     <section class="path-section">
-      <div class="section-title"><div><p class="eyebrow">YOUR LEARNING PATH</p><h2>Keep moving forward</h2></div><span class="tiny-badge">UNIT 01</span></div>
+      <div class="section-title"><div><p class="eyebrow">YOUR LEARNING PATH</p><h2>Keep moving forward</h2></div><span class="tiny-badge">A1 + A2</span></div>
       <div id="lesson-path" class="lesson-path"></div>
     </section>
-
     <section class="note-card">
       <div class="note-icon">💡</div><div><strong>Masar tip</strong><p>Don't worry about making mistakes. Every mistake is a chance to understand English better.</p></div>
     </section>
     <footer><span>MASAR · Practical English</span><button id="reset-btn" class="text-button">Reset demo progress</button></footer>
   </main>
-
   <nav class="bottom-nav" aria-label="Main navigation">
     <button class="nav-item active" data-nav="learn"><span>🧭</span>Learn</button>
     <button class="nav-item" data-nav="practice"><span>🎯</span>Practice</button>
     <button class="nav-item" data-nav="profile"><span>👤</span>Profile</button>
   </nav>
-
   <dialog id="lesson-dialog">
     <div class="dialog-head"><span id="lesson-unit" class="pill">LESSON</span><button id="close-dialog" class="close" aria-label="Close">×</button></div>
     <div id="lesson-content"></div>
   </dialog>
   <div id="toast" class="toast" role="status"></div>
   <script src="app.js"></script>
+  <script src="profile-enhancements.js"></script>
 </body>
 </html>

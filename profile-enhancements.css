@@ -1,0 +1,33 @@
+/* MASAR profile, achievements and level filters */
+.masar-level-filters{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 18px}
+.masar-filter{border:1px solid #d9d6fe;background:#fff;color:#37305f;border-radius:999px;padding:10px 13px;font:inherit;font-size:.88rem;font-weight:700;cursor:pointer;display:inline-flex;gap:8px;align-items:center;box-shadow:0 3px 10px rgba(31,41,55,.04)}
+.masar-filter span{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 5px;border-radius:99px;background:#f0edff;font-size:.75rem}
+.masar-filter.active{background:linear-gradient(135deg,#6d4aff,#8b5cf6);border-color:transparent;color:white;box-shadow:0 5px 14px rgba(109,74,255,.22)}
+.masar-filter.active span{background:rgba(255,255,255,.2);color:white}
+.lesson-card[hidden]{display:none!important}
+.masar-profile-panel{margin:22px 0 90px;padding:clamp(16px,4vw,26px);border:1px solid #e8e5ff;border-radius:24px;background:linear-gradient(155deg,#fff 0%,#f7f5ff 100%);box-shadow:0 12px 35px rgba(49,46,129,.08)}
+.masar-profile-panel h2{margin-top:4px}
+.masar-profile-card{display:grid;grid-template-columns:100px minmax(0,1fr);gap:18px;align-items:start;padding:18px;margin:16px 0;border:1px solid #e9e5ff;border-radius:20px;background:#fff}
+.masar-avatar-wrap{width:94px;height:94px;border-radius:50%;overflow:hidden;background:#ede9fe;display:grid;place-items:center;border:3px solid #d9ceff;box-shadow:0 4px 12px #6d4aff20}
+.masar-avatar{width:100%;height:100%;object-fit:cover}.masar-avatar-placeholder{font-size:2.5rem}
+.masar-profile-fields{min-width:0;display:flex;flex-direction:column;gap:9px}
+.masar-profile-fields label{font-size:.9rem;font-weight:750;color:#30265f}
+.masar-profile-fields input[type=text]{width:100%;min-width:0;box-sizing:border-box;border:1px solid #d9d6fe;border-radius:12px;padding:12px;background:#fcfbff;color:#202033;font:inherit}
+.masar-file-input{width:100%;font-size:.8rem}
+.masar-upload-label{display:inline-flex;align-self:flex-start;border-radius:10px;padding:8px 10px;background:#f2efff;cursor:pointer}
+.masar-save-profile{border:0;border-radius:12px;padding:12px 16px;background:linear-gradient(135deg,#10b981,#059669);color:#fff;font:inherit;font-weight:800;cursor:pointer;box-shadow:0 5px 12px #05966925}
+.masar-local-note{font-size:.8rem;line-height:1.5;color:#6b7280;margin:4px 0}
+.masar-profile-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}
+.masar-profile-stats>div,.masar-level-summary>div{background:#fff;border:1px solid #e9e5ff;border-radius:15px;padding:13px;display:flex;flex-direction:column;gap:7px;min-width:0}
+.masar-profile-stats span,.masar-level-summary span{font-size:.8rem;color:#5b5872;line-height:1.35}
+.masar-profile-stats strong,.masar-level-summary strong{font-size:1.2rem;color:#312e81}
+.masar-level-summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:22px}
+.masar-achievements-title{margin:22px 0 12px}
+.masar-achievements{display:grid;gap:10px}
+.masar-badge{display:flex;gap:12px;align-items:center;padding:12px;border-radius:15px;border:1px solid #e5e7eb;background:#fff}
+.masar-badge.earned{border-color:#a7f3d0;background:linear-gradient(100deg,#ecfdf5,#fff)}
+.masar-badge-icon{font-size:1.65rem;flex-shrink:0}.masar-badge>div{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1}
+.masar-badge strong{font-size:.94rem;color:#24213b}.masar-badge small{font-size:.78rem;line-height:1.35;color:#6b7280}
+.masar-badge-status{font-size:.75rem;font-weight:800;color:#6b7280;white-space:nowrap}.masar-badge.earned .masar-badge-status{color:#047857}
+.masar-privacy-note{margin-top:18px;padding:12px;border-radius:12px;background:#fff7ed;color:#9a3412}
+@media(max-width:520px){.masar-profile-card{grid-template-columns:1fr;justify-items:center}.masar-profile-fields{width:100%}.masar-profile-stats{grid-template-columns:1fr}.masar-profile-stats>div{flex-direction:row;align-items:center;justify-content:space-between}.masar-level-filters{gap:6px}.masar-filter{font-size:.8rem;padding:9px 10px}.masar-badge{gap:8px;padding:10px}.masar-badge-status{font-size:.68rem}}
