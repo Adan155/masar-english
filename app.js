@@ -1,5 +1,5 @@
 /* MASAR English Journey — app.js
-   60 lessons: A1 beginner course followed by the existing A2 course (Arabic support).
+   90 lessons: A1 beginner, A2 elementary, and B1 intermediate courses (Arabic support).
    Progress is saved in localStorage under "masar-progress".
    Progress is now stored by lesson ID (so lessons can be re-ordered safely);
    progress saved by the older 5-lesson version is migrated automatically. */
@@ -4019,7 +4019,2741 @@ const lessons = [
     correct: 1,
     explain: "Use the past simple went with yesterday.",
     challenge: "Speak for one minute: introduce yourself, describe yesterday, and explain your plans for tomorrow."
+  },
+  // B1 intermediate course: 30 lessons
+  
+  {
+    "id": "b1-life-experiences",
+    "title": "Talking About Life Experiences",
+    "icon": "🌍",
+    "time": "8 min",
+    "desc": "Talk about experiences you have had and things you have never done.",
+    "objective": "Use the present perfect to talk about life experiences.",
+    "phrases": [
+      [
+        "Have you ever travelled abroad?",
+        "هل سبق أن سافرت إلى الخارج؟"
+      ],
+      [
+        "I have visited Egypt twice.",
+        "زرت مصر مرتين."
+      ],
+      [
+        "I have never tried sushi.",
+        "لم أجرب السوشي من قبل."
+      ],
+      [
+        "That sounds like an amazing experience.",
+        "تبدو تجربة رائعة."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "experience",
+        "تجربة / خبرة"
+      ],
+      [
+        "abroad",
+        "إلى الخارج"
+      ],
+      [
+        "ever",
+        "في أي وقت / سبق أن"
+      ],
+      [
+        "recently",
+        "مؤخراً"
+      ]
+    ],
+    "grammar": {
+      "title": "Present perfect for experiences",
+      "explanation": "نستخدم have/has + التصريف الثالث للتحدث عن تجارب الحياة دون تحديد وقت ماضٍ. السؤال: Have you ever…?",
+      "examples": [
+        [
+          "I have tried horse riding.",
+          "جربت ركوب الخيل."
+        ],
+        [
+          "She has never travelled abroad.",
+          "لم تسافر إلى الخارج من قبل."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: Have you ever lived in another city?",
+        "أ: هل سبق أن عشت في مدينة أخرى؟"
+      ],
+      [
+        "B: Yes, I have. I lived in Tripoli for a year.",
+        "ب: نعم. عشت في طرابلس لمدة سنة."
+      ],
+      [
+        "A: What was it like?",
+        "أ: كيف كانت التجربة؟"
+      ],
+      [
+        "B: It was exciting, and I made new friends.",
+        "ب: كانت ممتعة وتعرفت على أصدقاء جدد."
+      ]
+    ],
+    "mistake": {
+      "wrong": "I have went to Cairo.",
+      "correct": "I have been to Cairo.",
+      "explanation": "بعد have/has نستخدم التصريف الثالث: been وليس went."
+    },
+    "q": "Choose the correct sentence.",
+    "answers": [
+      "I have saw that film.",
+      "I have seen that film.",
+      "I has seen that film."
+    ],
+    "correct": 1,
+    "explain": "Present perfect uses have/has + past participle: have seen.",
+    "challenge": "Talk for one minute about three things you have done and one thing you have never done.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-past-storytelling",
+    "title": "Telling a Story in the Past",
+    "icon": "📖",
+    "time": "8 min",
+    "desc": "Tell a clear story using past simple and past continuous.",
+    "objective": "Describe what happened and what was in progress.",
+    "phrases": [
+      [
+        "I was walking home when…",
+        "كنت أمشي إلى المنزل عندما…"
+      ],
+      [
+        "Suddenly, I heard a noise.",
+        "فجأة سمعت صوتاً."
+      ],
+      [
+        "While I was waiting, it started to rain.",
+        "بينما كنت أنتظر، بدأ المطر."
+      ],
+      [
+        "In the end, everything was fine.",
+        "في النهاية، كان كل شيء بخير."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "suddenly",
+        "فجأة"
+      ],
+      [
+        "while",
+        "بينما"
+      ],
+      [
+        "in the end",
+        "في النهاية"
+      ],
+      [
+        "happen",
+        "يحدث"
+      ]
+    ],
+    "grammar": {
+      "title": "Past simple vs past continuous",
+      "explanation": "نستخدم الماضي المستمر للخلفية أو الفعل المستمر، والماضي البسيط للحدث الذي قطعه أو حدث بعده.",
+      "examples": [
+        [
+          "I was cooking when the phone rang.",
+          "كنت أطبخ عندما رن الهاتف."
+        ],
+        [
+          "They were driving when it started to snow.",
+          "كانوا يقودون عندما بدأ الثلج يتساقط."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: What happened yesterday?",
+        "أ: ماذا حدث أمس؟"
+      ],
+      [
+        "B: I was going to work when my bus broke down.",
+        "ب: كنت ذاهباً إلى العمل عندما تعطلت الحافلة."
+      ],
+      [
+        "A: What did you do?",
+        "أ: ماذا فعلت؟"
+      ],
+      [
+        "B: I called my manager and took a taxi.",
+        "ب: اتصلت بمديري واستقللت سيارة أجرة."
+      ]
+    ],
+    "mistake": {
+      "wrong": "I cooked when he was arriving.",
+      "correct": "I was cooking when he arrived.",
+      "explanation": "الفعل المستمر يشكل خلفية الحدث، والحدث القصير يأتي غالباً بالماضي البسيط."
+    },
+    "q": "Choose the best sentence.",
+    "answers": [
+      "I was sleeping when the alarm rang.",
+      "I sleeping when the alarm rang.",
+      "I was sleep when the alarm rang."
+    ],
+    "correct": 0,
+    "explain": "Use was/were + verb-ing for the action in progress.",
+    "challenge": "Tell a short story about a surprising moment using “while”, “when”, and “suddenly”.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-future-plans-predictions",
+    "title": "Future Plans and Predictions",
+    "icon": "🔮",
+    "time": "8 min",
+    "desc": "Explain your plans, intentions, and predictions.",
+    "objective": "Choose between will, going to, and present continuous for the future.",
+    "phrases": [
+      [
+        "I’m planning to take a course.",
+        "أخطط للالتحاق بدورة."
+      ],
+      [
+        "I’m going to apply for a new job.",
+        "سأتقدم لوظيفة جديدة."
+      ],
+      [
+        "I think it will be easier.",
+        "أعتقد أنه سيكون أسهل."
+      ],
+      [
+        "I’m meeting my friend tomorrow.",
+        "سأقابل صديقي غداً."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "plan",
+        "خطة / يخطط"
+      ],
+      [
+        "intend",
+        "ينوي"
+      ],
+      [
+        "prediction",
+        "توقع"
+      ],
+      [
+        "arrangement",
+        "ترتيب مسبق"
+      ]
+    ],
+    "grammar": {
+      "title": "Ways to talk about the future",
+      "explanation": "going to للنية أو الدليل الواضح، will للتوقع أو القرار اللحظي، والمضارع المستمر للترتيبات المؤكدة.",
+      "examples": [
+        [
+          "Look at those clouds. It’s going to rain.",
+          "انظر إلى تلك الغيوم. ستمطر."
+        ],
+        [
+          "I’ll answer the phone.",
+          "سأرد على الهاتف."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: What are you doing this weekend?",
+        "أ: ماذا ستفعل في نهاية الأسبوع؟"
+      ],
+      [
+        "B: I’m visiting my cousin on Saturday.",
+        "ب: سأزور ابن عمي يوم السبت."
+      ],
+      [
+        "A: Are you going to study on Sunday?",
+        "أ: هل تنوي الدراسة يوم الأحد؟"
+      ],
+      [
+        "B: Yes, I’m going to finish my assignment.",
+        "ب: نعم، سأكمل واجبي."
+      ]
+    ],
+    "mistake": {
+      "wrong": "I will to call you tonight.",
+      "correct": "I will call you tonight.",
+      "explanation": "بعد will نستخدم الفعل في صورته الأساسية دون to."
+    },
+    "q": "Which sentence describes a fixed arrangement?",
+    "answers": [
+      "I’m meeting Lina at six.",
+      "I meet Lina yesterday.",
+      "I going meet Lina at six."
+    ],
+    "correct": 0,
+    "explain": "Present continuous can describe an arranged future event.",
+    "challenge": "Describe three plans for next week and make two predictions about the future.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-opinions-reasons",
+    "title": "Giving Opinions and Reasons",
+    "icon": "💬",
+    "time": "8 min",
+    "desc": "Share your opinion and support it with clear reasons.",
+    "objective": "Use opinion phrases and linking words to explain your point of view.",
+    "phrases": [
+      [
+        "In my opinion, online learning is useful.",
+        "في رأيي، التعلم عبر الإنترنت مفيد."
+      ],
+      [
+        "The main reason is that it saves time.",
+        "السبب الرئيسي هو أنه يوفر الوقت."
+      ],
+      [
+        "I see your point, but…",
+        "أتفهم وجهة نظرك، لكن…"
+      ],
+      [
+        "As far as I’m concerned…",
+        "بالنسبة لي…"
+      ]
+    ],
+    "vocabulary": [
+      [
+        "opinion",
+        "رأي"
+      ],
+      [
+        "reason",
+        "سبب"
+      ],
+      [
+        "point of view",
+        "وجهة نظر"
+      ],
+      [
+        "benefit",
+        "فائدة"
+      ]
+    ],
+    "grammar": {
+      "title": "Linking opinions and reasons",
+      "explanation": "استخدم because لتقديم السبب، however للتباين، وalso لإضافة فكرة. اربط رأيك بسبب أو مثال.",
+      "examples": [
+        [
+          "I prefer buses because they are cheaper.",
+          "أفضل الحافلات لأنها أرخص."
+        ],
+        [
+          "Online courses are flexible; however, they require self-discipline.",
+          "الدورات عبر الإنترنت مرنة، لكنها تتطلب انضباطاً ذاتياً."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: Do you think everyone should learn English?",
+        "أ: هل تعتقد أن على الجميع تعلم الإنجليزية؟"
+      ],
+      [
+        "B: In my opinion, it is useful for work and travel.",
+        "ب: في رأيي، هي مفيدة للعمل والسفر."
+      ],
+      [
+        "A: That’s true, but it can be expensive.",
+        "أ: هذا صحيح، لكنها قد تكون مكلفة."
+      ],
+      [
+        "B: I agree. Free online resources can help.",
+        "ب: أتفق. يمكن أن تساعد المصادر المجانية عبر الإنترنت."
+      ]
+    ],
+    "mistake": {
+      "wrong": "In my opinion, because it is useful.",
+      "correct": "In my opinion, it is useful because it helps me at work.",
+      "explanation": "الرأي يحتاج إلى جملة مكتملة، ويمكن إضافة السبب باستخدام because."
+    },
+    "q": "Which phrase introduces a reason?",
+    "answers": [
+      "However",
+      "Because",
+      "For example"
+    ],
+    "correct": 1,
+    "explain": "Because introduces the reason for an opinion or action.",
+    "challenge": "Give your opinion about learning online and support it with two reasons and one example.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-agreeing-disagreeing",
+    "title": "Agreeing and Disagreeing Politely",
+    "icon": "🤝",
+    "time": "8 min",
+    "desc": "Respond respectfully when someone has a different opinion.",
+    "objective": "Agree, partly agree, or disagree without sounding rude.",
+    "phrases": [
+      [
+        "I completely agree with you.",
+        "أتفق معك تماماً."
+      ],
+      [
+        "I’m not sure I agree.",
+        "لست متأكداً من أنني أتفق."
+      ],
+      [
+        "You may be right, but…",
+        "قد تكون محقاً، لكن…"
+      ],
+      [
+        "That’s a fair point.",
+        "هذه وجهة نظر وجيهة."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "completely",
+        "تماماً"
+      ],
+      [
+        "partly",
+        "جزئياً"
+      ],
+      [
+        "respectful",
+        "محترم"
+      ],
+      [
+        "fair point",
+        "نقطة وجيهة"
+      ]
+    ],
+    "grammar": {
+      "title": "Softening disagreement",
+      "explanation": "استخدم عبارات تمهيدية مثل I see what you mean وI’m not sure بدل الرفض المباشر. أضف but لتقديم وجهة نظرك.",
+      "examples": [
+        [
+          "I see what you mean, but I prefer the other option.",
+          "أفهم قصدك، لكنني أفضل الخيار الآخر."
+        ],
+        [
+          "I partly agree because the situation is different for everyone.",
+          "أتفق جزئياً لأن الوضع يختلف من شخص لآخر."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: I think working from home is always better.",
+        "أ: أعتقد أن العمل من المنزل أفضل دائماً."
+      ],
+      [
+        "B: I see your point, but some people need an office.",
+        "ب: أفهم وجهة نظرك، لكن بعض الناس يحتاجون إلى مكتب."
+      ],
+      [
+        "A: That’s a fair point.",
+        "أ: هذه وجهة نظر وجيهة."
+      ],
+      [
+        "B: It depends on the job, I think.",
+        "ب: أعتقد أن الأمر يعتمد على الوظيفة."
+      ]
+    ],
+    "mistake": {
+      "wrong": "You are wrong.",
+      "correct": "I see it differently.",
+      "explanation": "العبارة الثانية ألطف وتسمح بمناقشة الفكرة دون مهاجمة الشخص."
+    },
+    "q": "Which is the most polite disagreement?",
+    "answers": [
+      "That’s stupid.",
+      "You know nothing.",
+      "I see your point, but I think differently."
+    ],
+    "correct": 2,
+    "explain": "Acknowledge the other person’s view before explaining your disagreement.",
+    "challenge": "Discuss whether phones should be allowed in class. Agree with one point and politely disagree with another.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-comparisons-choices",
+    "title": "Comparing Options and Making Choices",
+    "icon": "⚖️",
+    "time": "8 min",
+    "desc": "Compare choices and explain which one suits you best.",
+    "objective": "Use comparative forms and phrases for evaluating options.",
+    "phrases": [
+      [
+        "This option is more affordable.",
+        "هذا الخيار أقل تكلفة."
+      ],
+      [
+        "It’s not as convenient as the other one.",
+        "إنه ليس مريحاً بقدر الخيار الآخر."
+      ],
+      [
+        "The biggest advantage is…",
+        "أكبر ميزة هي…"
+      ],
+      [
+        "I’d rather choose the second option.",
+        "أفضل اختيار الخيار الثاني."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "affordable",
+        "ميسور التكلفة"
+      ],
+      [
+        "convenient",
+        "مريح / مناسب"
+      ],
+      [
+        "advantage",
+        "ميزة"
+      ],
+      [
+        "drawback",
+        "عيب"
+      ]
+    ],
+    "grammar": {
+      "title": "Comparatives and “as…as”",
+      "explanation": "نستخدم -er أو more للمقارنة، وas + adjective + as للتساوي. بعض الصفات شاذة مثل good → better.",
+      "examples": [
+        [
+          "The train is faster than the bus.",
+          "القطار أسرع من الحافلة."
+        ],
+        [
+          "This phone is as reliable as my old one.",
+          "هذا الهاتف موثوق بقدر هاتفي القديم."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: Which course would you choose?",
+        "أ: أي دورة ستختار؟"
+      ],
+      [
+        "B: The evening course. It’s more convenient for me.",
+        "ب: الدورة المسائية. فهي أنسب لي."
+      ],
+      [
+        "A: But the morning course is shorter.",
+        "أ: لكن الدورة الصباحية أقصر."
+      ],
+      [
+        "B: True, but the evening course fits my schedule better.",
+        "ب: صحيح، لكن المسائية تناسب جدولي أكثر."
+      ]
+    ],
+    "mistake": {
+      "wrong": "This one is more cheaper.",
+      "correct": "This one is cheaper.",
+      "explanation": "لا نستخدم more مع الصفة التي أخذت -er في المقارنة."
+    },
+    "q": "Choose the correct comparison.",
+    "answers": [
+      "This route is more shorter.",
+      "This route is shorter than that one.",
+      "This route shorter that one."
+    ],
+    "correct": 1,
+    "explain": "Use adjective + -er + than for short adjectives.",
+    "challenge": "Compare two ways of learning English and explain which one is better for you.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-problem-solving",
+    "title": "Explaining Problems and Finding Solutions",
+    "icon": "🧩",
+    "time": "8 min",
+    "desc": "Describe a problem and suggest practical solutions.",
+    "objective": "Use should, could, and why don’t you to make suggestions.",
+    "phrases": [
+      [
+        "I’m having trouble with my internet.",
+        "أواجه مشكلة في الإنترنت."
+      ],
+      [
+        "One possible solution is…",
+        "أحد الحلول الممكنة هو…"
+      ],
+      [
+        "You could try restarting it.",
+        "يمكنك تجربة إعادة تشغيله."
+      ],
+      [
+        "Have you thought about…?",
+        "هل فكرت في…؟"
+      ]
+    ],
+    "vocabulary": [
+      [
+        "solution",
+        "حل"
+      ],
+      [
+        "issue",
+        "مشكلة / مسألة"
+      ],
+      [
+        "suggest",
+        "يقترح"
+      ],
+      [
+        "fix",
+        "يصلح"
+      ]
+    ],
+    "grammar": {
+      "title": "Suggestions with should, could, and why don’t you",
+      "explanation": "should للنصيحة، could لاقتراح خيار، وWhy don’t you…? لاقتراح مباشر لكنه ودود.",
+      "examples": [
+        [
+          "You should save a copy of your work.",
+          "ينبغي أن تحفظ نسخة من عملك."
+        ],
+        [
+          "Why don’t you ask your teacher for help?",
+          "لماذا لا تطلب المساعدة من معلمك؟"
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: I can’t concentrate when I study at home.",
+        "أ: لا أستطيع التركيز عندما أدرس في المنزل."
+      ],
+      [
+        "B: You could study in a quieter room.",
+        "ب: يمكنك الدراسة في غرفة أكثر هدوءاً."
+      ],
+      [
+        "A: I’ve tried that, but my phone distracts me.",
+        "أ: جربت ذلك، لكن هاتفي يشتت انتباهي."
+      ],
+      [
+        "B: Why don’t you put it in another room?",
+        "ب: لماذا لا تضعه في غرفة أخرى؟"
+      ]
+    ],
+    "mistake": {
+      "wrong": "You should to rest.",
+      "correct": "You should rest.",
+      "explanation": "بعد should وcould نستخدم الفعل الأساسي دون to."
+    },
+    "q": "Choose the correct suggestion.",
+    "answers": [
+      "You should to call them.",
+      "You should call them.",
+      "You should calling them."
+    ],
+    "correct": 1,
+    "explain": "Should is followed by the base form of the verb.",
+    "challenge": "Describe a real study or work problem and suggest two possible solutions.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-work-skills",
+    "title": "Talking About Work and Skills",
+    "icon": "💼",
+    "time": "8 min",
+    "desc": "Describe your skills, responsibilities, and career goals.",
+    "objective": "Talk about strengths and work experience clearly.",
+    "phrases": [
+      [
+        "I’m responsible for organising the files.",
+        "أنا مسؤول عن تنظيم الملفات."
+      ],
+      [
+        "I have experience in customer service.",
+        "لدي خبرة في خدمة العملاء."
+      ],
+      [
+        "One of my strengths is problem-solving.",
+        "إحدى نقاط قوتي هي حل المشكلات."
+      ],
+      [
+        "I’m hoping to develop my communication skills.",
+        "آمل تطوير مهارات التواصل لدي."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "responsible for",
+        "مسؤول عن"
+      ],
+      [
+        "strength",
+        "نقطة قوة"
+      ],
+      [
+        "experience",
+        "خبرة"
+      ],
+      [
+        "develop",
+        "يطوّر"
+      ]
+    ],
+    "grammar": {
+      "title": "Verb patterns: enjoy, want, good at",
+      "explanation": "بعد enjoy نستخدم الفعل + ing، وبعد want نستخدم to + verb، وبعد good at نستخدم اسماً أو فعلاً + ing.",
+      "examples": [
+        [
+          "I enjoy working with people.",
+          "أستمتع بالعمل مع الناس."
+        ],
+        [
+          "I want to improve my writing.",
+          "أريد تحسين كتابتي."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: What are your main strengths?",
+        "أ: ما أهم نقاط قوتك؟"
+      ],
+      [
+        "B: I’m organised, and I learn new systems quickly.",
+        "ب: أنا منظم وأتعلم الأنظمة الجديدة بسرعة."
+      ],
+      [
+        "A: What would you like to improve?",
+        "أ: ماذا تريد أن تطور؟"
+      ],
+      [
+        "B: I’d like to become more confident when speaking in meetings.",
+        "ب: أود أن أصبح أكثر ثقة عند التحدث في الاجتماعات."
+      ]
+    ],
+    "mistake": {
+      "wrong": "I enjoy to work in a team.",
+      "correct": "I enjoy working in a team.",
+      "explanation": "بعد enjoy نستخدم الفعل مع ing."
+    },
+    "q": "Choose the correct sentence.",
+    "answers": [
+      "I want improving my English.",
+      "I enjoy to learn.",
+      "I’m good at solving problems."
+    ],
+    "correct": 2,
+    "explain": "Good at is followed by a noun or an -ing form.",
+    "challenge": "Introduce your skills as if you were answering an interview question.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-email-informal",
+    "title": "Writing Friendly Emails and Messages",
+    "icon": "✉️",
+    "time": "8 min",
+    "desc": "Write a friendly message to invite someone or share news.",
+    "objective": "Organise an informal email with a greeting, message, and closing.",
+    "phrases": [
+      [
+        "How have you been?",
+        "كيف حالك؟"
+      ],
+      [
+        "I’m writing to tell you that…",
+        "أكتب إليك لأخبرك أن…"
+      ],
+      [
+        "Would you like to come along?",
+        "هل تود أن تأتي معنا؟"
+      ],
+      [
+        "Let me know what you think.",
+        "أخبرني برأيك."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "catch up",
+        "يتبادل الأخبار"
+      ],
+      [
+        "invite",
+        "يدعو"
+      ],
+      [
+        "by the way",
+        "بالمناسبة"
+      ],
+      [
+        "looking forward to",
+        "يتطلع إلى"
+      ]
+    ],
+    "grammar": {
+      "title": "Informal language and question forms",
+      "explanation": "الرسائل الودية تستخدم اختصارات مثل I’m وwe’re، وأسئلة لطيفة مثل Would you like…?، مع بداية ونهاية مناسبتين.",
+      "examples": [
+        [
+          "Hi Sara, how are things?",
+          "مرحباً سارة، كيف الأحوال؟"
+        ],
+        [
+          "Write back when you get a chance.",
+          "اكتبي لي عندما تتاح لك الفرصة."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: Are you free on Friday?",
+        "أ: هل أنت متفرغ يوم الجمعة؟"
+      ],
+      [
+        "B: I think so. What do you have in mind?",
+        "ب: أعتقد ذلك. ماذا تقترح؟"
+      ],
+      [
+        "A: I’m having a small get-together at my place.",
+        "أ: سأقيم تجمعاً صغيراً في منزلي."
+      ],
+      [
+        "B: Sounds great! Thanks for inviting me.",
+        "ب: يبدو رائعاً! شكراً على دعوتي."
+      ]
+    ],
+    "mistake": {
+      "wrong": "Dear my friend Sara,",
+      "correct": "Hi Sara,",
+      "explanation": "في رسالة ودية، “Hi Sara” أو “Hello Sara” طبيعية أكثر."
+    },
+    "q": "Which closing is suitable for a friendly email?",
+    "answers": [
+      "Yours faithfully,",
+      "Best wishes,",
+      "To whom it may concern,"
+    ],
+    "correct": 1,
+    "explain": "“Best wishes” is a common friendly email closing.",
+    "challenge": "Write a short message inviting a friend to an event and asking them to reply.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-formal-email",
+    "title": "Writing Clear and Polite Formal Emails",
+    "icon": "📨",
+    "time": "8 min",
+    "desc": "Make requests and ask for information professionally.",
+    "objective": "Use polite formal language in emails.",
+    "phrases": [
+      [
+        "I am writing to enquire about…",
+        "أكتب للاستفسار عن…"
+      ],
+      [
+        "I would be grateful if you could…",
+        "سأكون ممتناً إذا أمكنك…"
+      ],
+      [
+        "Could you please provide further details?",
+        "هل يمكنك تقديم تفاصيل إضافية؟"
+      ],
+      [
+        "Thank you for your time and assistance.",
+        "شكراً لوقتك ومساعدتك."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "enquire",
+        "يستفسر"
+      ],
+      [
+        "assistance",
+        "مساعدة"
+      ],
+      [
+        "further details",
+        "تفاصيل إضافية"
+      ],
+      [
+        "regarding",
+        "بخصوص"
+      ]
+    ],
+    "grammar": {
+      "title": "Polite requests with could and would",
+      "explanation": "استخدم Could you…? وI would be grateful if… لطلب شيء بطريقة مهنية. تجنب الأوامر المباشرة في الرسائل الرسمية.",
+      "examples": [
+        [
+          "Could you please confirm the date?",
+          "هل يمكنك تأكيد التاريخ من فضلك؟"
+        ],
+        [
+          "I would appreciate it if you replied by Thursday.",
+          "سأقدّر ردك بحلول الخميس."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: How can I help you?",
+        "أ: كيف يمكنني مساعدتك؟"
+      ],
+      [
+        "B: I’m writing to enquire about the training programme.",
+        "ب: أكتب للاستفسار عن البرنامج التدريبي."
+      ],
+      [
+        "A: Which details do you need?",
+        "أ: ما التفاصيل التي تحتاجها؟"
+      ],
+      [
+        "B: Could you please tell me the application deadline?",
+        "ب: هل يمكنك إخباري بموعد انتهاء التقديم؟"
+      ]
+    ],
+    "mistake": {
+      "wrong": "Send me the information now.",
+      "correct": "Could you please send me the information?",
+      "explanation": "الطلب بصيغة سؤال مهذب أنسب في المراسلات الرسمية."
+    },
+    "q": "Choose the most professional request.",
+    "answers": [
+      "Give me the form.",
+      "I want the form now.",
+      "Could you please send me the form?"
+    ],
+    "correct": 2,
+    "explain": "“Could you please…?” is polite and professional.",
+    "challenge": "Write a formal email asking for information about a course, including a greeting and closing.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-travel-plans",
+    "title": "Travel Plans and Arrangements",
+    "icon": "🧳",
+    "time": "8 min",
+    "desc": "Discuss bookings, transport, and travel arrangements.",
+    "objective": "Ask for travel information and describe plans.",
+    "phrases": [
+      [
+        "I’d like to book a room for two nights.",
+        "أود حجز غرفة لليلتين."
+      ],
+      [
+        "Is breakfast included?",
+        "هل الإفطار مشمول؟"
+      ],
+      [
+        "What time does the train leave?",
+        "متى يغادر القطار؟"
+      ],
+      [
+        "Could you confirm my reservation?",
+        "هل يمكنك تأكيد حجزي؟"
+      ]
+    ],
+    "vocabulary": [
+      [
+        "reservation",
+        "حجز"
+      ],
+      [
+        "departure",
+        "مغادرة"
+      ],
+      [
+        "destination",
+        "وجهة"
+      ],
+      [
+        "included",
+        "مشمول"
+      ]
+    ],
+    "grammar": {
+      "title": "Indirect questions for politeness",
+      "explanation": "في السؤال غير المباشر، نستخدم ترتيب الجملة العادي بعد عبارة مثل Could you tell me…?",
+      "examples": [
+        [
+          "Could you tell me where the station is?",
+          "هل يمكنك إخباري أين تقع المحطة؟"
+        ],
+        [
+          "Do you know when the bus arrives?",
+          "هل تعرف متى تصل الحافلة؟"
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: Good afternoon. How can I help?",
+        "أ: مساء الخير. كيف أساعدك؟"
+      ],
+      [
+        "B: I’d like to check my reservation for tomorrow.",
+        "ب: أود التأكد من حجزي ليوم غد."
+      ],
+      [
+        "A: Certainly. Could I have your name, please?",
+        "أ: بالتأكيد. هل يمكنني معرفة اسمك؟"
+      ],
+      [
+        "B: It’s Musa. Is breakfast included?",
+        "ب: اسمي موسى. هل الإفطار مشمول؟"
+      ]
+    ],
+    "mistake": {
+      "wrong": "Can you tell me where is the airport?",
+      "correct": "Can you tell me where the airport is?",
+      "explanation": "في السؤال غير المباشر نستخدم ترتيب الجملة: subject + verb."
+    },
+    "q": "Choose the correct indirect question.",
+    "answers": [
+      "Do you know where is the hotel?",
+      "Do you know where the hotel is?",
+      "Do you know where hotel is the?"
+    ],
+    "correct": 1,
+    "explain": "Indirect questions use normal statement word order.",
+    "challenge": "Role-play booking a hotel room and asking about check-in, breakfast, and transport.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-technology-digital-life",
+    "title": "Technology and Digital Life",
+    "icon": "📱",
+    "time": "8 min",
+    "desc": "Discuss how technology affects daily life.",
+    "objective": "Describe advantages and disadvantages of technology.",
+    "phrases": [
+      [
+        "Technology has made it easier to…",
+        "جعلت التكنولوجيا من الأسهل أن…"
+      ],
+      [
+        "One drawback is that…",
+        "أحد العيوب هو أن…"
+      ],
+      [
+        "I rely on my phone to…",
+        "أعتمد على هاتفي من أجل…"
+      ],
+      [
+        "It can be useful as long as…",
+        "يمكن أن يكون مفيداً ما دام…"
+      ]
+    ],
+    "vocabulary": [
+      [
+        "device",
+        "جهاز"
+      ],
+      [
+        "rely on",
+        "يعتمد على"
+      ],
+      [
+        "privacy",
+        "الخصوصية"
+      ],
+      [
+        "screen time",
+        "وقت استخدام الشاشة"
+      ]
+    ],
+    "grammar": {
+      "title": "First conditional and “as long as”",
+      "explanation": "نستخدم if/as long as + present simple، ثم will أو can للتحدث عن نتيجة محتملة في المستقبل.",
+      "examples": [
+        [
+          "If you back up your files, you won’t lose them easily.",
+          "إذا أنشأت نسخة احتياطية لملفاتك فلن تفقدها بسهولة."
+        ],
+        [
+          "You can use the app as long as you protect your password.",
+          "يمكنك استخدام التطبيق ما دمت تحمي كلمة مرورك."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: Do you think people use their phones too much?",
+        "أ: هل تعتقد أن الناس يستخدمون هواتفهم كثيراً؟"
+      ],
+      [
+        "B: Sometimes. Phones are helpful, but they can distract us.",
+        "ب: أحياناً. الهواتف مفيدة، لكنها قد تشتت انتباهنا."
+      ],
+      [
+        "A: How do you manage your screen time?",
+        "أ: كيف تدير وقت الشاشة؟"
+      ],
+      [
+        "B: I turn off notifications when I study.",
+        "ب: أوقف الإشعارات عندما أدرس."
+      ]
+    ],
+    "mistake": {
+      "wrong": "If I will have time, I will call you.",
+      "correct": "If I have time, I will call you.",
+      "explanation": "في جملة الشرط الأولى نستخدم المضارع البسيط بعد if، وليس will."
+    },
+    "q": "Choose the correct first conditional.",
+    "answers": [
+      "If it rains, we will stay inside.",
+      "If it will rain, we stay inside.",
+      "If it rain, we will stay inside."
+    ],
+    "correct": 0,
+    "explain": "If + present simple, will + base verb.",
+    "challenge": "Give two benefits and two drawbacks of smartphones, then explain how to use them wisely.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-environment",
+    "title": "The Environment and Everyday Choices",
+    "icon": "🌱",
+    "time": "8 min",
+    "desc": "Talk about environmental problems and practical actions.",
+    "objective": "Use environmental vocabulary and suggest ways to reduce waste.",
+    "phrases": [
+      [
+        "We should reduce plastic waste.",
+        "ينبغي أن نقلل النفايات البلاستيكية."
+      ],
+      [
+        "Public transport produces less pollution.",
+        "تنتج وسائل النقل العام تلوثاً أقل."
+      ],
+      [
+        "Small changes can make a difference.",
+        "يمكن للتغييرات الصغيرة أن تحدث فرقاً."
+      ],
+      [
+        "I try to reuse bags whenever possible.",
+        "أحاول إعادة استخدام الأكياس كلما أمكن."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "pollution",
+        "تلوث"
+      ],
+      [
+        "recycle",
+        "يعيد التدوير"
+      ],
+      [
+        "waste",
+        "نفايات / يهدر"
+      ],
+      [
+        "renewable energy",
+        "طاقة متجددة"
+      ]
+    ],
+    "grammar": {
+      "title": "Modal verbs for obligation and possibility",
+      "explanation": "must وhave to للتعبير عن الضرورة، should للنصيحة، وmight للتعبير عن احتمال.",
+      "examples": [
+        [
+          "We have to protect clean water.",
+          "علينا حماية المياه النظيفة."
+        ],
+        [
+          "Solar power might become cheaper.",
+          "قد تصبح الطاقة الشمسية أقل تكلفة."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: What can people do to help the environment?",
+        "أ: ماذا يمكن للناس أن يفعلوا لمساعدة البيئة؟"
+      ],
+      [
+        "B: They can use reusable bottles and bags.",
+        "ب: يمكنهم استخدام زجاجات وأكياس قابلة لإعادة الاستخدام."
+      ],
+      [
+        "A: Is recycling enough?",
+        "أ: هل إعادة التدوير كافية؟"
+      ],
+      [
+        "B: It helps, but we should also buy less unnecessary stuff.",
+        "ب: إنها مفيدة، لكن ينبغي أيضاً شراء أشياء غير ضرورية أقل."
+      ]
+    ],
+    "mistake": {
+      "wrong": "People must to recycle more.",
+      "correct": "People must recycle more.",
+      "explanation": "بعد must نستخدم الفعل الأساسي دون to."
+    },
+    "q": "Which sentence expresses advice?",
+    "answers": [
+      "You should reuse containers.",
+      "You reused containers yesterday.",
+      "You are a container."
+    ],
+    "correct": 0,
+    "explain": "Should is commonly used to give advice.",
+    "challenge": "Suggest three realistic changes a family can make to reduce waste.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-learning-strategies",
+    "title": "Learning Strategies and Study Habits",
+    "icon": "📚",
+    "time": "8 min",
+    "desc": "Explain how you learn and make a realistic study plan.",
+    "objective": "Use gerunds and infinitives to talk about learning habits.",
+    "phrases": [
+      [
+        "I find it helpful to review notes daily.",
+        "أجد أن مراجعة الملاحظات يومياً مفيدة."
+      ],
+      [
+        "I struggle to remember new words.",
+        "أجد صعوبة في تذكر الكلمات الجديدة."
+      ],
+      [
+        "I’ve started listening to podcasts.",
+        "بدأت الاستماع إلى البودكاست."
+      ],
+      [
+        "I’m getting better at speaking.",
+        "أتحسن في التحدث."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "review",
+        "يراجع"
+      ],
+      [
+        "memorise",
+        "يحفظ"
+      ],
+      [
+        "progress",
+        "تقدم"
+      ],
+      [
+        "consistent",
+        "منتظم / ثابت"
+      ]
+    ],
+    "grammar": {
+      "title": "Gerunds and infinitives",
+      "explanation": "بعض الأفعال يأتي بعدها فعل + ing مثل enjoy/avoid، وأفعال أخرى يأتي بعدها to + verb مثل want/plan/decide.",
+      "examples": [
+        [
+          "I decided to practise every day.",
+          "قررت أن أتدرب يومياً."
+        ],
+        [
+          "I avoid translating every single word.",
+          "أتجنب ترجمة كل كلمة على حدة."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: How do you remember new vocabulary?",
+        "أ: كيف تتذكر المفردات الجديدة؟"
+      ],
+      [
+        "B: I write example sentences and review them later.",
+        "ب: أكتب جملاً نموذجية وأراجعها لاحقاً."
+      ],
+      [
+        "A: Do you enjoy learning with videos?",
+        "أ: هل تستمتع بالتعلم عبر الفيديوهات؟"
+      ],
+      [
+        "B: Yes, but I also try to speak aloud every day.",
+        "ب: نعم، لكنني أحاول أيضاً التحدث بصوت عالٍ كل يوم."
+      ]
+    ],
+    "mistake": {
+      "wrong": "I decided studying every night.",
+      "correct": "I decided to study every night.",
+      "explanation": "بعد decide نستخدم to + الفعل الأساسي."
+    },
+    "q": "Choose the correct sentence.",
+    "answers": [
+      "I enjoy to read in English.",
+      "I plan improve my listening.",
+      "I avoid studying when I’m exhausted."
+    ],
+    "correct": 2,
+    "explain": "Avoid is followed by the -ing form.",
+    "challenge": "Describe your current English study routine and one change that could improve it.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-describing-people",
+    "title": "Describing Personality and Relationships",
+    "icon": "🧑‍🤝‍🧑",
+    "time": "8 min",
+    "desc": "Describe personality and explain what makes a good friend or colleague.",
+    "objective": "Use personality adjectives and relative clauses.",
+    "phrases": [
+      [
+        "She’s someone who always keeps her promises.",
+        "إنها شخص يفي بوعوده دائماً."
+      ],
+      [
+        "He can be quiet at first, but he’s friendly.",
+        "قد يكون هادئاً في البداية، لكنه ودود."
+      ],
+      [
+        "We get along really well.",
+        "ننسجم معاً جيداً."
+      ],
+      [
+        "I admire her because she’s dependable.",
+        "أعجب بها لأنها جديرة بالاعتماد عليها."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "reliable",
+        "موثوق / يمكن الاعتماد عليه"
+      ],
+      [
+        "thoughtful",
+        "مراعٍ لمشاعر الآخرين"
+      ],
+      [
+        "outgoing",
+        "اجتماعي"
+      ],
+      [
+        "patient",
+        "صبور"
+      ]
+    ],
+    "grammar": {
+      "title": "Defining relative clauses",
+      "explanation": "نستخدم who للأشخاص وwhich للأشياء وthat للأشخاص أو الأشياء لتوضيح من أو ماذا نقصد.",
+      "examples": [
+        [
+          "A colleague who listens carefully is valuable.",
+          "الزميل الذي يستمع بانتباه شخص قيّم."
+        ],
+        [
+          "I like books that make me think.",
+          "أحب الكتب التي تجعلني أفكر."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: What do you value in a friend?",
+        "أ: ما الصفات التي تقدرها في الصديق؟"
+      ],
+      [
+        "B: Someone who is honest and keeps promises.",
+        "ب: شخص صادق ويفي بوعوده."
+      ],
+      [
+        "A: Are you outgoing?",
+        "أ: هل أنت اجتماعي؟"
+      ],
+      [
+        "B: I’m a little shy at first, but I open up when I feel comfortable.",
+        "ب: أشعر ببعض الخجل في البداية، لكنني أنفتح عندما أشعر بالراحة."
+      ]
+    ],
+    "mistake": {
+      "wrong": "She is a person which helps everyone.",
+      "correct": "She is a person who helps everyone.",
+      "explanation": "نستخدم who عند وصف الأشخاص."
+    },
+    "q": "Choose the correct relative pronoun.",
+    "answers": [
+      "A person which is kind",
+      "A person who is kind",
+      "A person where is kind"
+    ],
+    "correct": 1,
+    "explain": "Who is used for people.",
+    "challenge": "Describe someone you admire using at least four personality adjectives and one relative clause.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-shopping-complaints",
+    "title": "Shopping, Returns, and Complaints",
+    "icon": "🛍️",
+    "time": "8 min",
+    "desc": "Explain a problem with a purchase and request a fair solution.",
+    "objective": "Make complaints politely and explain what went wrong.",
+    "phrases": [
+      [
+        "I’m afraid this item is faulty.",
+        "أخشى أن هذه القطعة معطوبة."
+      ],
+      [
+        "I bought it two days ago.",
+        "اشتريتها قبل يومين."
+      ],
+      [
+        "Would it be possible to get a refund?",
+        "هل يمكن استرداد المبلغ؟"
+      ],
+      [
+        "I’d prefer to exchange it.",
+        "أفضل استبدالها."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "faulty",
+        "معطوب"
+      ],
+      [
+        "refund",
+        "استرداد المبلغ"
+      ],
+      [
+        "exchange",
+        "استبدال"
+      ],
+      [
+        "receipt",
+        "إيصال"
+      ]
+    ],
+    "grammar": {
+      "title": "Past simple and present perfect in complaints",
+      "explanation": "استخدم الماضي البسيط لوقت محدد مثل yesterday، والمضارع التام لنتيجة حالية أو تجربة دون وقت محدد.",
+      "examples": [
+        [
+          "I bought this yesterday, and it doesn’t work.",
+          "اشتريت هذا أمس، وهو لا يعمل."
+        ],
+        [
+          "I’ve lost the receipt.",
+          "لقد فقدت الإيصال."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: How can I help you?",
+        "أ: كيف أساعدك؟"
+      ],
+      [
+        "B: I bought these headphones yesterday, but one side doesn’t work.",
+        "ب: اشتريت سماعات الرأس هذه أمس، لكن أحد الجانبين لا يعمل."
+      ],
+      [
+        "A: Do you have the receipt?",
+        "أ: هل لديك الإيصال؟"
+      ],
+      [
+        "B: Yes. Could I exchange them for another pair?",
+        "ب: نعم. هل يمكنني استبدالها بزوج آخر؟"
+      ]
+    ],
+    "mistake": {
+      "wrong": "I have bought it yesterday.",
+      "correct": "I bought it yesterday.",
+      "explanation": "مع وقت ماضٍ محدد مثل yesterday نستخدم الماضي البسيط."
+    },
+    "q": "Which sentence is correct?",
+    "answers": [
+      "I have seen him yesterday.",
+      "I saw him yesterday.",
+      "I see him yesterday."
+    ],
+    "correct": 1,
+    "explain": "Use past simple with a finished, specified time in the past.",
+    "challenge": "Role-play returning a faulty item and asking politely for a refund or exchange.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-making-decisions",
+    "title": "Making Decisions and Explaining Priorities",
+    "icon": "🧭",
+    "time": "8 min",
+    "desc": "Explain choices, priorities, and possible consequences.",
+    "objective": "Use second conditional to discuss hypothetical choices.",
+    "phrases": [
+      [
+        "If I had more time, I’d learn another language.",
+        "لو كان لدي وقت أكثر لتعلمت لغة أخرى."
+      ],
+      [
+        "My priority at the moment is…",
+        "أولويتي في الوقت الحالي هي…"
+      ],
+      [
+        "I need to weigh up the options.",
+        "أحتاج إلى موازنة الخيارات."
+      ],
+      [
+        "It depends on what matters most.",
+        "يعتمد الأمر على ما هو الأهم."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "priority",
+        "أولوية"
+      ],
+      [
+        "option",
+        "خيار"
+      ],
+      [
+        "consequence",
+        "نتيجة"
+      ],
+      [
+        "weigh up",
+        "يوازن بين الخيارات"
+      ]
+    ],
+    "grammar": {
+      "title": "Second conditional",
+      "explanation": "نستخدم If + past simple, would + base verb للحديث عن مواقف افتراضية أو غير مرجحة في الحاضر أو المستقبل.",
+      "examples": [
+        [
+          "If I had a car, I would visit more places.",
+          "لو كانت لدي سيارة لزرت أماكن أكثر."
+        ],
+        [
+          "I’d take the course if it were cheaper.",
+          "سألتحق بالدورة لو كانت أقل تكلفة."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: If you could change one thing about your routine, what would it be?",
+        "أ: لو استطعت تغيير شيء واحد في روتينك، فما هو؟"
+      ],
+      [
+        "B: I’d wake up earlier so I had more time to study.",
+        "ب: سأستيقظ أبكر حتى يكون لدي وقت أكثر للدراسة."
+      ],
+      [
+        "A: Why is that important to you?",
+        "أ: لماذا هذا مهم بالنسبة لك؟"
+      ],
+      [
+        "B: My main priority is improving my English.",
+        "ب: أولويتي الأساسية هي تحسين لغتي الإنجليزية."
+      ]
+    ],
+    "mistake": {
+      "wrong": "If I would have time, I would travel.",
+      "correct": "If I had time, I would travel.",
+      "explanation": "في جملة الشرط الثانية نستخدم الماضي البسيط بعد if، وليس would."
+    },
+    "q": "Choose the correct second conditional.",
+    "answers": [
+      "If I have money, I would buy it.",
+      "If I had money, I would buy it.",
+      "If I would have money, I buy it."
+    ],
+    "correct": 1,
+    "explain": "If + past simple, would + base verb.",
+    "challenge": "Answer: “If you had a free year, what would you do?” Give reasons for your choice.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-regrets-and-lessons",
+    "title": "Regrets, Mistakes, and Lessons Learned",
+    "icon": "💡",
+    "time": "8 min",
+    "desc": "Reflect on past decisions and explain what you learned.",
+    "objective": "Use should have and shouldn’t have to discuss past choices.",
+    "phrases": [
+      [
+        "I should have prepared earlier.",
+        "كان ينبغي أن أستعد مبكراً."
+      ],
+      [
+        "I wish I had asked for help.",
+        "أتمنى لو أنني طلبت المساعدة."
+      ],
+      [
+        "At least I learned something from it.",
+        "على الأقل تعلمت شيئاً من ذلك."
+      ],
+      [
+        "Next time, I’ll make sure to…",
+        "في المرة القادمة، سأحرص على…"
+      ]
+    ],
+    "vocabulary": [
+      [
+        "regret",
+        "ندم"
+      ],
+      [
+        "lesson",
+        "درس / عِبرة"
+      ],
+      [
+        "mistake",
+        "خطأ"
+      ],
+      [
+        "prepare",
+        "يستعد"
+      ]
+    ],
+    "grammar": {
+      "title": "Should have + past participle",
+      "explanation": "نستخدم should have + التصريف الثالث للنصيحة التي لم نتبعها في الماضي، وshouldn’t have لما كان من الأفضل ألا نفعله.",
+      "examples": [
+        [
+          "I should have checked the address.",
+          "كان ينبغي أن أتحقق من العنوان."
+        ],
+        [
+          "We shouldn’t have left so late.",
+          "ما كان ينبغي أن نغادر متأخرين هكذا."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: How was your presentation?",
+        "أ: كيف كان عرضك التقديمي؟"
+      ],
+      [
+        "B: It was okay, but I should have practised more.",
+        "ب: كان جيداً، لكن كان ينبغي أن أتدرب أكثر."
+      ],
+      [
+        "A: What will you do next time?",
+        "أ: ماذا ستفعل في المرة القادمة؟"
+      ],
+      [
+        "B: I’ll rehearse and check my slides the day before.",
+        "ب: سأتدرب وأراجع الشرائح في اليوم السابق."
+      ]
+    ],
+    "mistake": {
+      "wrong": "I should have went earlier.",
+      "correct": "I should have gone earlier.",
+      "explanation": "بعد have نستخدم التصريف الثالث: gone وليس went."
+    },
+    "q": "Choose the correct sentence.",
+    "answers": [
+      "I should have studied more.",
+      "I should studied more.",
+      "I should have study more."
+    ],
+    "correct": 0,
+    "explain": "Should have is followed by the past participle.",
+    "challenge": "Describe a small mistake you learned from using “I should have…” and “Next time…”.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-describing-places",
+    "title": "Describing Places and Memorable Visits",
+    "icon": "📍",
+    "time": "8 min",
+    "desc": "Describe a place vividly and explain why it is memorable.",
+    "objective": "Use sensory adjectives and relative clauses to describe places.",
+    "phrases": [
+      [
+        "What I liked most was the atmosphere.",
+        "أكثر ما أعجبني هو الأجواء."
+      ],
+      [
+        "It’s a place where you can relax.",
+        "إنه مكان يمكنك الاسترخاء فيه."
+      ],
+      [
+        "The streets were lined with small cafés.",
+        "كانت الشوارع تصطف على جانبيها المقاهي الصغيرة."
+      ],
+      [
+        "I’d definitely recommend visiting.",
+        "أنصح بزيارته بالتأكيد."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "atmosphere",
+        "أجواء"
+      ],
+      [
+        "scenic",
+        "ذو مناظر جميلة"
+      ],
+      [
+        "lively",
+        "حيوي"
+      ],
+      [
+        "peaceful",
+        "هادئ"
+      ]
+    ],
+    "grammar": {
+      "title": "Relative clauses and descriptive language",
+      "explanation": "استخدم where لوصف مكان، وwhich/that لوصف شيء. أضف صفات وتفاصيل حسية لتجعل الوصف أوضح.",
+      "examples": [
+        [
+          "It’s a village where people know each other.",
+          "إنها قرية يعرف الناس فيها بعضهم بعضاً."
+        ],
+        [
+          "We visited a museum that was full of interesting objects.",
+          "زرنا متحفاً مليئاً بالأشياء المثيرة للاهتمام."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: What place would you recommend visiting?",
+        "أ: ما المكان الذي تنصح بزيارته؟"
+      ],
+      [
+        "B: I’d recommend the old town because it has a lovely atmosphere.",
+        "ب: أنصح بالمدينة القديمة لأن أجواءها جميلة."
+      ],
+      [
+        "A: What can you do there?",
+        "أ: ماذا يمكن أن تفعل هناك؟"
+      ],
+      [
+        "B: You can walk through narrow streets and try local food.",
+        "ب: يمكنك التجول في الشوارع الضيقة وتجربة الطعام المحلي."
+      ]
+    ],
+    "mistake": {
+      "wrong": "It is a place which I grew up.",
+      "correct": "It is the place where I grew up.",
+      "explanation": "نستخدم where للمكان الذي حدث فيه شيء."
+    },
+    "q": "Choose the correct sentence.",
+    "answers": [
+      "A café where serves good coffee",
+      "A café which serves good coffee",
+      "A café who serves good coffee"
+    ],
+    "correct": 1,
+    "explain": "Which can refer to things such as a café.",
+    "challenge": "Describe a place you remember well using at least five adjectives and one relative clause.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-entertainment-reviews",
+    "title": "Films, Books, and Giving Reviews",
+    "icon": "🎬",
+    "time": "8 min",
+    "desc": "Describe a film, book, or series and recommend it.",
+    "objective": "Give a balanced review using adjectives and linking phrases.",
+    "phrases": [
+      [
+        "The story is based on a true event.",
+        "القصة مبنية على حدث حقيقي."
+      ],
+      [
+        "What I enjoyed most was…",
+        "أكثر ما استمتعت به هو…"
+      ],
+      [
+        "The ending was a little disappointing.",
+        "كانت النهاية مخيبة للآمال قليلاً."
+      ],
+      [
+        "I’d recommend it to anyone who enjoys…",
+        "أنصح به لكل من يستمتع بـ…"
+      ]
+    ],
+    "vocabulary": [
+      [
+        "plot",
+        "حبكة"
+      ],
+      [
+        "character",
+        "شخصية"
+      ],
+      [
+        "moving",
+        "مؤثر"
+      ],
+      [
+        "predictable",
+        "متوقع"
+      ]
+    ],
+    "grammar": {
+      "title": "Adjectives ending in -ed and -ing",
+      "explanation": "الصفة المنتهية بـ -ing تصف الشيء الذي يسبب الشعور، والمنتهية بـ -ed تصف شعور الشخص.",
+      "examples": [
+        [
+          "The film was fascinating.",
+          "كان الفيلم ممتعاً للغاية."
+        ],
+        [
+          "I was fascinated by the characters.",
+          "انبهرت بالشخصيات."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: Have you watched anything good recently?",
+        "أ: هل شاهدت شيئاً جيداً مؤخراً؟"
+      ],
+      [
+        "B: Yes, I watched a documentary about space.",
+        "ب: نعم، شاهدت فيلماً وثائقياً عن الفضاء."
+      ],
+      [
+        "A: Was it interesting?",
+        "أ: هل كان ممتعاً؟"
+      ],
+      [
+        "B: Very. It was informative, although one section was a bit slow.",
+        "ب: جداً. كان غنياً بالمعلومات، رغم أن جزءاً منه كان بطيئاً قليلاً."
+      ]
+    ],
+    "mistake": {
+      "wrong": "I was very interesting in the film.",
+      "correct": "I was very interested in the film.",
+      "explanation": "Interested تصف شعور الشخص، أما interesting فتصف الشيء الذي يثير الاهتمام."
+    },
+    "q": "Choose the correct sentence.",
+    "answers": [
+      "The lecture was bored.",
+      "I was boring during the lecture.",
+      "The lecture was boring."
+    ],
+    "correct": 2,
+    "explain": "Boring describes the thing that causes boredom.",
+    "challenge": "Give a short review of a film, book, or video. Include one positive and one negative point.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-complaints-conflict",
+    "title": "Handling Complaints and Disagreements",
+    "icon": "🗣️",
+    "time": "8 min",
+    "desc": "Explain a complaint calmly and work toward a solution.",
+    "objective": "Use calm language, explain the issue, and request action.",
+    "phrases": [
+      [
+        "I understand there may be a reason, but…",
+        "أتفهم أنه قد يكون هناك سبب، لكن…"
+      ],
+      [
+        "The problem is that…",
+        "المشكلة هي أن…"
+      ],
+      [
+        "I was expecting something different.",
+        "كنت أتوقع شيئاً مختلفاً."
+      ],
+      [
+        "How can we resolve this?",
+        "كيف يمكننا حل هذا؟"
+      ]
+    ],
+    "vocabulary": [
+      [
+        "resolve",
+        "يحل"
+      ],
+      [
+        "misunderstanding",
+        "سوء فهم"
+      ],
+      [
+        "expectation",
+        "توقع"
+      ],
+      [
+        "reasonable",
+        "معقول"
+      ]
+    ],
+    "grammar": {
+      "title": "Past continuous for background and explanations",
+      "explanation": "يمكن استخدام الماضي المستمر لتوضيح ما كان يحدث عندما ظهرت المشكلة، ثم الماضي البسيط لذكر الحدث.",
+      "examples": [
+        [
+          "I was waiting for an hour when the office closed.",
+          "كنت أنتظر لمدة ساعة عندما أغلق المكتب."
+        ],
+        [
+          "We were discussing the issue when the manager arrived.",
+          "كنا نناقش المشكلة عندما وصل المدير."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: I’m sorry, but your order is late.",
+        "أ: أعتذر، لكن طلبك متأخر."
+      ],
+      [
+        "B: I understand, but I was told it would arrive yesterday.",
+        "ب: أتفهم ذلك، لكن قيل لي إنه سيصل أمس."
+      ],
+      [
+        "A: Let me check what happened.",
+        "أ: دعني أتحقق مما حدث."
+      ],
+      [
+        "B: Thank you. I’d appreciate an update today.",
+        "ب: شكراً. سأقدّر الحصول على تحديث اليوم."
+      ]
+    ],
+    "mistake": {
+      "wrong": "You never do anything right!",
+      "correct": "I’m concerned because this has happened twice.",
+      "explanation": "اذكر المشكلة بوضوح دون اتهامات عامة أو إهانة."
+    },
+    "q": "Which phrase helps solve a conflict?",
+    "answers": [
+      "You always ruin everything.",
+      "How can we resolve this?",
+      "I refuse to listen."
+    ],
+    "correct": 1,
+    "explain": "A solution-focused question helps move a disagreement forward.",
+    "challenge": "Practise making a complaint about a late delivery while staying calm and specific.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-plans-invitations",
+    "title": "Invitations, Suggestions, and Social Plans",
+    "icon": "🎉",
+    "time": "8 min",
+    "desc": "Invite people, accept or decline, and suggest alternatives.",
+    "objective": "Use natural phrases for social arrangements.",
+    "phrases": [
+      [
+        "Would you like to join us?",
+        "هل تود الانضمام إلينا؟"
+      ],
+      [
+        "That sounds lovely.",
+        "يبدو ذلك رائعاً."
+      ],
+      [
+        "I’d love to, but I’m afraid I can’t.",
+        "أود ذلك، لكن للأسف لا أستطيع."
+      ],
+      [
+        "How about meeting a little earlier?",
+        "ما رأيك أن نلتقي أبكر قليلاً؟"
+      ]
+    ],
+    "vocabulary": [
+      [
+        "join",
+        "ينضم"
+      ],
+      [
+        "available",
+        "متاح"
+      ],
+      [
+        "alternative",
+        "بديل"
+      ],
+      [
+        "postpone",
+        "يؤجل"
+      ]
+    ],
+    "grammar": {
+      "title": "Suggestions with how about and would you like",
+      "explanation": "بعد How about نستخدم اسماً أو فعلاً + ing. بعد Would you like to نستخدم الفعل مع to.",
+      "examples": [
+        [
+          "How about going for coffee?",
+          "ما رأيك أن نذهب لشرب القهوة؟"
+        ],
+        [
+          "Would you like to come over on Friday?",
+          "هل تود زيارتنا يوم الجمعة؟"
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: Would you like to come to the book fair?",
+        "أ: هل تود الذهاب إلى معرض الكتاب؟"
+      ],
+      [
+        "B: I’d love to. What time are you going?",
+        "ب: بكل سرور. في أي وقت ستذهبون؟"
+      ],
+      [
+        "A: Around five. We could meet at the entrance.",
+        "أ: حوالي الخامسة. يمكننا الالتقاء عند المدخل."
+      ],
+      [
+        "B: Great. See you there!",
+        "ب: رائع. أراك هناك!"
+      ]
+    ],
+    "mistake": {
+      "wrong": "How about to meet at six?",
+      "correct": "How about meeting at six?",
+      "explanation": "بعد How about نستخدم الفعل مع ing."
+    },
+    "q": "Choose the correct suggestion.",
+    "answers": [
+      "How about to eat out?",
+      "How about eating out?",
+      "How about eat out?"
+    ],
+    "correct": 1,
+    "explain": "How about + verb-ing is the correct pattern.",
+    "challenge": "Invite a friend to an activity, respond to an invitation, and suggest a different time.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-describing-change",
+    "title": "Describing Changes Over Time",
+    "icon": "🔄",
+    "time": "8 min",
+    "desc": "Describe how your life, skills, or a place has changed.",
+    "objective": "Use used to and present perfect to compare past and present.",
+    "phrases": [
+      [
+        "I used to be shy when speaking English.",
+        "كنت خجولاً عند التحدث بالإنجليزية."
+      ],
+      [
+        "Things have changed a lot.",
+        "تغيرت الأمور كثيراً."
+      ],
+      [
+        "I’ve become more confident.",
+        "أصبحت أكثر ثقة."
+      ],
+      [
+        "I don’t do that anymore.",
+        "لم أعد أفعل ذلك."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "used to",
+        "كان يفعل في الماضي"
+      ],
+      [
+        "nowadays",
+        "في الوقت الحاضر"
+      ],
+      [
+        "improve",
+        "يتحسن"
+      ],
+      [
+        "gradually",
+        "تدريجياً"
+      ]
+    ],
+    "grammar": {
+      "title": "Used to vs present perfect",
+      "explanation": "نستخدم used to لعادات أو حالات في الماضي لم تعد صحيحة، والمضارع التام للتغيير الذي حدث حتى الآن.",
+      "examples": [
+        [
+          "I used to study only at weekends.",
+          "كنت أدرس في عطلة نهاية الأسبوع فقط."
+        ],
+        [
+          "My listening has improved recently.",
+          "تحسن الاستماع لدي مؤخراً."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: Has your English changed since you started learning?",
+        "أ: هل تغيرت إنجليزيتك منذ أن بدأت التعلم؟"
+      ],
+      [
+        "B: Yes, I used to avoid speaking, but now I practise every day.",
+        "ب: نعم، كنت أتجنب التحدث، لكنني الآن أتدرب كل يوم."
+      ],
+      [
+        "A: What has helped the most?",
+        "أ: ما أكثر شيء ساعدك؟"
+      ],
+      [
+        "B: Regular practice and not worrying about every mistake.",
+        "ب: التدريب المنتظم وعدم القلق بشأن كل خطأ."
+      ]
+    ],
+    "mistake": {
+      "wrong": "I use to be very shy.",
+      "correct": "I used to be very shy.",
+      "explanation": "في الإثبات نستخدم used to، أما في السؤال والنفي نستخدم did/didn’t use to."
+    },
+    "q": "Choose the correct sentence.",
+    "answers": [
+      "I used to live here, but now I live elsewhere.",
+      "I use to lived here.",
+      "I used living here in the past."
+    ],
+    "correct": 0,
+    "explain": "Used to + base verb describes a past habit or state.",
+    "challenge": "Describe three ways your life or habits have changed over the last few years.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-possibilities-certainty",
+    "title": "Possibility, Probability, and Certainty",
+    "icon": "🌦️",
+    "time": "8 min",
+    "desc": "Explain how sure you are about a situation or prediction.",
+    "objective": "Use may, might, must, and can’t to express different levels of certainty.",
+    "phrases": [
+      [
+        "It might be delayed because of the weather.",
+        "قد يتأخر بسبب الطقس."
+      ],
+      [
+        "She must be busy right now.",
+        "لا بد أنها مشغولة الآن."
+      ],
+      [
+        "That can’t be the right address.",
+        "لا يمكن أن يكون هذا العنوان الصحيح."
+      ],
+      [
+        "There’s a good chance that…",
+        "هناك احتمال كبير أن…"
+      ]
+    ],
+    "vocabulary": [
+      [
+        "possibility",
+        "احتمال"
+      ],
+      [
+        "likely",
+        "محتمل"
+      ],
+      [
+        "unlikely",
+        "غير محتمل"
+      ],
+      [
+        "certain",
+        "متأكد"
+      ]
+    ],
+    "grammar": {
+      "title": "Modals of deduction",
+      "explanation": "نستخدم might/may عندما يكون الشيء ممكناً، must عندما نستنتج أنه مرجح جداً، وcan’t عندما نعتقد أنه مستحيل أو غير صحيح.",
+      "examples": [
+        [
+          "He hasn’t answered; he might be driving.",
+          "لم يرد؛ ربما يقود السيارة."
+        ],
+        [
+          "The lights are on, so they must be home.",
+          "الأضواء مضاءة، لذا لا بد أنهم في المنزل."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: The shop is closed, but it’s only six.",
+        "أ: المتجر مغلق، مع أن الساعة السادسة فقط."
+      ],
+      [
+        "B: It might be a public holiday.",
+        "ب: ربما تكون عطلة رسمية."
+      ],
+      [
+        "A: Could be. The other shop is open, though.",
+        "أ: ممكن. لكن المتجر الآخر مفتوح."
+      ],
+      [
+        "B: Then this can’t be the usual closing time.",
+        "ب: إذن لا يمكن أن يكون هذا وقت الإغلاق المعتاد."
+      ]
+    ],
+    "mistake": {
+      "wrong": "She must to be tired.",
+      "correct": "She must be tired.",
+      "explanation": "بعد must وmight وmay نستخدم الفعل الأساسي دون to."
+    },
+    "q": "Which sentence expresses a strong logical conclusion?",
+    "answers": [
+      "He must be at home; his car is outside.",
+      "He must to be at home.",
+      "He can’t is at home."
+    ],
+    "correct": 0,
+    "explain": "Must + base verb can express a strong conclusion based on evidence.",
+    "challenge": "Look at an imaginary situation and make three deductions using might, must, and can’t.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-passive-processes",
+    "title": "How Things Are Made and Done",
+    "icon": "⚙️",
+    "time": "8 min",
+    "desc": "Explain processes when the action matters more than the person.",
+    "objective": "Use passive voice in present and past simple.",
+    "phrases": [
+      [
+        "The form is completed online.",
+        "يُملأ النموذج عبر الإنترنت."
+      ],
+      [
+        "The building was designed in 1990.",
+        "صُمم المبنى عام 1990."
+      ],
+      [
+        "The results are checked carefully.",
+        "تُراجع النتائج بعناية."
+      ],
+      [
+        "The package was delivered this morning.",
+        "تم تسليم الطرد هذا الصباح."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "process",
+        "عملية"
+      ],
+      [
+        "produce",
+        "ينتج"
+      ],
+      [
+        "design",
+        "يصمم"
+      ],
+      [
+        "deliver",
+        "يسلّم"
+      ]
+    ],
+    "grammar": {
+      "title": "Passive voice: present and past simple",
+      "explanation": "المبني للمجهول: am/is/are + التصريف الثالث في المضارع، وwas/were + التصريف الثالث في الماضي.",
+      "examples": [
+        [
+          "Coffee is grown in many countries.",
+          "تُزرع القهوة في دول كثيرة."
+        ],
+        [
+          "The bridge was built ten years ago.",
+          "بُني الجسر قبل عشر سنوات."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: Do you know how these bags are made?",
+        "أ: هل تعرف كيف تُصنع هذه الحقائب؟"
+      ],
+      [
+        "B: I think they’re produced in a local factory.",
+        "ب: أعتقد أنها تُنتج في مصنع محلي."
+      ],
+      [
+        "A: Were they designed here too?",
+        "أ: وهل صُممت هنا أيضاً؟"
+      ],
+      [
+        "B: Yes, the original design was created by a local artist.",
+        "ب: نعم، صمم فنان محلي التصميم الأصلي."
+      ]
+    ],
+    "mistake": {
+      "wrong": "The letters sent yesterday.",
+      "correct": "The letters were sent yesterday.",
+      "explanation": "الماضي المبني للمجهول يحتاج إلى was/were + التصريف الثالث."
+    },
+    "q": "Choose the correct past passive sentence.",
+    "answers": [
+      "The room cleaned yesterday.",
+      "The room was cleaned yesterday.",
+      "The room was clean yesterday by someone."
+    ],
+    "correct": 1,
+    "explain": "Past simple passive = was/were + past participle.",
+    "challenge": "Explain how an online application or a simple product is processed, using passive sentences.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-indirect-speech",
+    "title": "Reporting What People Said",
+    "icon": "🗨️",
+    "time": "8 min",
+    "desc": "Report conversations and share messages accurately.",
+    "objective": "Use said and told to report statements.",
+    "phrases": [
+      [
+        "She said she was running late.",
+        "قالت إنها ستتأخر."
+      ],
+      [
+        "He told me he would call back.",
+        "أخبرني أنه سيتصل لاحقاً."
+      ],
+      [
+        "They said they had finished.",
+        "قالوا إنهم انتهوا."
+      ],
+      [
+        "I was told that the meeting had changed.",
+        "أُخبرت أن الاجتماع قد تغير."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "report",
+        "ينقل / تقرير"
+      ],
+      [
+        "message",
+        "رسالة"
+      ],
+      [
+        "mention",
+        "يذكر"
+      ],
+      [
+        "confirm",
+        "يؤكد"
+      ]
+    ],
+    "grammar": {
+      "title": "Reported speech: statements",
+      "explanation": "عند نقل كلام قيل في الماضي، قد يتغير الزمن إلى الماضي الأسبق: am → was، will → would، have → had.",
+      "examples": [
+        [
+          "“I am tired,” she said. → She said she was tired.",
+          "«أنا متعبة»، قالت. ← قالت إنها متعبة."
+        ],
+        [
+          "“I will help,” he told me. → He told me he would help.",
+          "«سأساعد»، أخبرني. ← أخبرني أنه سيساعد."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: Did you speak to Omar?",
+        "أ: هل تحدثت مع عمر؟"
+      ],
+      [
+        "B: Yes. He said he was going to be late.",
+        "ب: نعم. قال إنه سيتأخر."
+      ],
+      [
+        "A: Did he tell you why?",
+        "أ: هل أخبرك بالسبب؟"
+      ],
+      [
+        "B: He told me that his bus had broken down.",
+        "ب: أخبرني أن حافلته تعطلت."
+      ]
+    ],
+    "mistake": {
+      "wrong": "She told that she was ill.",
+      "correct": "She said that she was ill. / She told me that she was ill.",
+      "explanation": "بعد told نذكر الشخص عادةً، أما said فيمكن أن يأتي بعدها that مباشرة."
+    },
+    "q": "Choose the correct sentence.",
+    "answers": [
+      "He told that he was tired.",
+      "He told me that he was tired.",
+      "He said me that he was tired."
+    ],
+    "correct": 1,
+    "explain": "Use told + person + that-clause.",
+    "challenge": "Report three things a friend told you recently, changing pronouns and verb tenses where needed.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-time-management",
+    "title": "Time Management and Deadlines",
+    "icon": "⏱️",
+    "time": "8 min",
+    "desc": "Discuss deadlines, priorities, and ways to manage time.",
+    "objective": "Use time expressions and the present perfect continuous.",
+    "phrases": [
+      [
+        "I’ve been working on this since Monday.",
+        "أعمل على هذا منذ يوم الاثنين."
+      ],
+      [
+        "I’m running out of time.",
+        "الوقت ينفد مني."
+      ],
+      [
+        "I need to meet the deadline.",
+        "أحتاج إلى الالتزام بالموعد النهائي."
+      ],
+      [
+        "I’ve been trying to organise my week.",
+        "أحاول تنظيم أسبوعي منذ فترة."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "deadline",
+        "موعد نهائي"
+      ],
+      [
+        "prioritise",
+        "يرتب حسب الأولوية"
+      ],
+      [
+        "postpone",
+        "يؤجل"
+      ],
+      [
+        "time-consuming",
+        "يستغرق وقتاً طويلاً"
+      ]
+    ],
+    "grammar": {
+      "title": "Present perfect continuous",
+      "explanation": "نستخدم have/has been + verb-ing لعمل بدأ في الماضي وما زال مستمراً أو لشرح نشاط حديث له أثر الآن.",
+      "examples": [
+        [
+          "I’ve been studying for two hours.",
+          "أدرس منذ ساعتين."
+        ],
+        [
+          "She has been looking for a job since May.",
+          "تبحث عن عمل منذ مايو."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: You look busy. What are you working on?",
+        "أ: تبدو مشغولاً. على ماذا تعمل؟"
+      ],
+      [
+        "B: I’ve been preparing a report all morning.",
+        "ب: أجهز تقريراً طوال الصباح."
+      ],
+      [
+        "A: Is the deadline today?",
+        "أ: هل الموعد النهائي اليوم؟"
+      ],
+      [
+        "B: Yes, so I’m prioritising the most important sections first.",
+        "ب: نعم، لذلك أرتب الأقسام الأهم أولاً حسب الأولوية."
+      ]
+    ],
+    "mistake": {
+      "wrong": "I am studying here since January.",
+      "correct": "I have been studying here since January.",
+      "explanation": "مع since للدلالة على مدة مستمرة حتى الآن، نستخدم غالباً present perfect أو present perfect continuous."
+    },
+    "q": "Choose the correct sentence.",
+    "answers": [
+      "I have been waiting for 30 minutes.",
+      "I am waiting since 30 minutes.",
+      "I have waiting for 30 minutes."
+    ],
+    "correct": 0,
+    "explain": "Present perfect continuous = have/has been + -ing.",
+    "challenge": "Explain what you have been working on recently and how you plan to meet a deadline.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-speaking-fluency",
+    "title": "Speaking Fluently and Keeping a Conversation Going",
+    "icon": "🎙️",
+    "time": "8 min",
+    "desc": "Use follow-up questions and conversation fillers naturally.",
+    "objective": "Extend answers and show interest in what others say.",
+    "phrases": [
+      [
+        "That’s an interesting question.",
+        "هذا سؤال مثير للاهتمام."
+      ],
+      [
+        "What I mean is…",
+        "ما أقصده هو…"
+      ],
+      [
+        "Could you tell me a little more?",
+        "هل يمكنك أن تخبرني بالمزيد؟"
+      ],
+      [
+        "That reminds me of…",
+        "هذا يذكرني بـ…"
+      ]
+    ],
+    "vocabulary": [
+      [
+        "follow-up question",
+        "سؤال متابعة"
+      ],
+      [
+        "clarify",
+        "يوضح"
+      ],
+      [
+        "actually",
+        "في الواقع"
+      ],
+      [
+        "by the way",
+        "بالمناسبة"
+      ]
+    ],
+    "grammar": {
+      "title": "Question tags and follow-up questions",
+      "explanation": "يمكن استخدام question tags لطلب التأكيد، مثل It’s useful, isn’t it?، وطرح أسئلة متابعة لإبقاء الحوار مستمراً.",
+      "examples": [
+        [
+          "You enjoy reading, don’t you?",
+          "أنت تستمتع بالقراءة، أليس كذلك؟"
+        ],
+        [
+          "What did you like most about it?",
+          "ما أكثر شيء أعجبك فيه؟"
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: I started learning graphic design last month.",
+        "أ: بدأت تعلم التصميم الجرافيكي الشهر الماضي."
+      ],
+      [
+        "B: Really? What made you interested in it?",
+        "ب: حقاً؟ ما الذي جعلك تهتم به؟"
+      ],
+      [
+        "A: I enjoy creating things on my tablet.",
+        "أ: أستمتع بصنع الأشياء على جهازي اللوحي."
+      ],
+      [
+        "B: That sounds creative. What are you learning at the moment?",
+        "ب: يبدو ذلك إبداعياً. ماذا تتعلم حالياً؟"
+      ]
+    ],
+    "mistake": {
+      "wrong": "I like it. End of conversation.",
+      "correct": "I like it because it’s practical. What do you think?",
+      "explanation": "أضف سبباً أو مثالاً ثم اسأل سؤال متابعة حتى يستمر الحوار."
+    },
+    "q": "Which response keeps the conversation going?",
+    "answers": [
+      "Nice.",
+      "That’s interesting. What do you like most about it?",
+      "Okay, bye."
+    ],
+    "correct": 1,
+    "explain": "A follow-up question invites the other person to say more.",
+    "challenge": "Have a two-minute conversation. Give extended answers and ask at least three follow-up questions.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-goals-and-motivation",
+    "title": "Setting Goals and Staying Motivated",
+    "icon": "🎯",
+    "time": "8 min",
+    "desc": "Explain personal goals and how to stay motivated.",
+    "objective": "Use goal-setting language and clauses with so that.",
+    "phrases": [
+      [
+        "My short-term goal is to…",
+        "هدفي على المدى القصير هو…"
+      ],
+      [
+        "I’m working towards…",
+        "أعمل من أجل تحقيق…"
+      ],
+      [
+        "I try to break big tasks into smaller steps.",
+        "أحاول تقسيم المهام الكبيرة إلى خطوات أصغر."
+      ],
+      [
+        "I remind myself why I started.",
+        "أذكر نفسي بسبب البداية."
+      ]
+    ],
+    "vocabulary": [
+      [
+        "goal",
+        "هدف"
+      ],
+      [
+        "motivation",
+        "دافع"
+      ],
+      [
+        "achievable",
+        "قابل للتحقيق"
+      ],
+      [
+        "milestone",
+        "مرحلة مهمة"
+      ]
+    ],
+    "grammar": {
+      "title": "Infinitives of purpose with to and so that",
+      "explanation": "نستخدم to + verb لذكر الهدف، وso that + جملة لشرح النتيجة المقصودة.",
+      "examples": [
+        [
+          "I practise daily to improve my pronunciation.",
+          "أتدرب يومياً لتحسين نطقي."
+        ],
+        [
+          "I write a schedule so that I don’t forget my tasks.",
+          "أكتب جدولاً حتى لا أنسى مهامي."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: What goal are you working towards?",
+        "أ: ما الهدف الذي تعمل على تحقيقه؟"
+      ],
+      [
+        "B: I want to speak English confidently in meetings.",
+        "ب: أريد التحدث بالإنجليزية بثقة في الاجتماعات."
+      ],
+      [
+        "A: How will you achieve it?",
+        "أ: كيف ستحقق ذلك؟"
+      ],
+      [
+        "B: I’ll practise short presentations so that I become more comfortable.",
+        "ب: سأتدرب على عروض قصيرة حتى أشعر براحة أكبر."
+      ]
+    ],
+    "mistake": {
+      "wrong": "I study English for improve my speaking.",
+      "correct": "I study English to improve my speaking.",
+      "explanation": "للتعبير عن الهدف نستخدم to + الفعل الأساسي."
+    },
+    "q": "Choose the sentence that expresses purpose.",
+    "answers": [
+      "I went to the shop for buy milk.",
+      "I went to the shop to buy milk.",
+      "I went to the shop buying milk."
+    ],
+    "correct": 1,
+    "explain": "Use to + base verb to explain why you do something.",
+    "challenge": "Set one English-learning goal for the next month and describe three steps to achieve it.",
+    "level": "B1"
+  },
+  {
+    "id": "b1-integrated-real-life",
+    "title": "Real-Life English: Putting It All Together",
+    "icon": "⭐",
+    "time": "10 min",
+    "desc": "Combine B1 skills in a realistic everyday situation.",
+    "objective": "Use several grammar points and communication strategies in one conversation.",
+    "phrases": [
+      [
+        "Let me explain what happened.",
+        "دعني أوضح ما حدث."
+      ],
+      [
+        "The main issue is that…",
+        "المشكلة الأساسية هي أن…"
+      ],
+      [
+        "If I were you, I’d…",
+        "لو كنت مكانك، لفعلت…"
+      ],
+      [
+        "To sum up, I think we should…",
+        "باختصار، أعتقد أننا ينبغي أن…"
+      ]
+    ],
+    "vocabulary": [
+      [
+        "summarise",
+        "يلخص"
+      ],
+      [
+        "recommendation",
+        "توصية"
+      ],
+      [
+        "compromise",
+        "حل وسط"
+      ],
+      [
+        "outcome",
+        "نتيجة"
+      ]
+    ],
+    "grammar": {
+      "title": "Review: linking ideas across tenses",
+      "explanation": "في المواقف الواقعية قد تجمع بين الماضي لشرح ما حدث، والمضارع لشرح الوضع، والشرط أو should لتقديم حل. اربط الأفكار بكلمات مثل because, however, so, and although.",
+      "examples": [
+        [
+          "I missed the bus, so I arrived late.",
+          "فاتتني الحافلة، لذلك وصلت متأخراً."
+        ],
+        [
+          "Although the task was difficult, we finished it on time.",
+          "رغم أن المهمة كانت صعبة، أكملناها في الوقت المحدد."
+        ]
+      ]
+    },
+    "conversation": [
+      [
+        "A: We have a problem. The meeting has been moved to tomorrow, but I’m not ready.",
+        "أ: لدينا مشكلة. تم نقل الاجتماع إلى الغد، لكنني لست مستعداً."
+      ],
+      [
+        "B: What have you finished so far?",
+        "ب: ماذا أنجزت حتى الآن؟"
+      ],
+      [
+        "A: I’ve completed the research, but I still need to prepare the slides.",
+        "أ: أكملت البحث، لكن ما زلت أحتاج إلى إعداد الشرائح."
+      ],
+      [
+        "B: If I were you, I’d focus on the main points and ask a colleague to review them.",
+        "ب: لو كنت مكانك، لركزت على النقاط الرئيسية وطلبت من زميل مراجعتها."
+      ]
+    ],
+    "mistake": {
+      "wrong": "Although I was tired, but I finished.",
+      "correct": "Although I was tired, I finished. / I was tired, but I finished.",
+      "explanation": "لا نستخدم although وbut معاً لربط الجملتين بالطريقة نفسها."
+    },
+    "q": "Choose the sentence with correct linking.",
+    "answers": [
+      "Although it was late, but we continued.",
+      "Although it was late, we continued.",
+      "Despite it was late, we continued."
+    ],
+    "correct": 1,
+    "explain": "Use although + clause without adding but in the same structure.",
+    "challenge": "Describe a real-life problem, explain what happened, suggest a solution, and summarise your opinion in 6–8 sentences.",
+    "level": "B1"
   }
+
+
  ];
 
 /* ------------------------------------------------------------------ */
@@ -4027,7 +6761,7 @@ const lessons = [
 /* ------------------------------------------------------------------ */
 
 const STORAGE_KEY = "masar-progress";
-const EXPECTED_LESSON_COUNT = 60;
+const EXPECTED_LESSON_COUNT = 90;
 
 // Order of the original 5-lesson version. Older saved progress stored lesson
 // positions (0–4); these IDs let us convert it to the new ID-based format.
