@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#092d40">
+  <meta name="description" content="MASAR — practical English learning through short lessons and interactive practice.">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/app-icon.png">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+/* MASAR profile, achievements and level filters */
+.masar-level-filters{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 18px}
+.masar-filter{border:1px solid #d9d6fe;background:#fff;color:#37305f;border-radius:999px;padding:10px 13px;font:inherit;font-size:.88rem;font-weight:700;cursor:pointer;display:inline-flex;gap:8px;align-items:center;box-shadow:0 3px 10px rgba(31,41,55,.04)}
+.masar-filter span{display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 5px;border-radius:99px;background:#f0edff;font-size:.75rem}
+.masar-filter.active{background:linear-gradient(135deg,#6d4aff,#8b5cf6);border-color:transparent;color:white;box-shadow:0 5px 14px rgba(109,74,255,.22)}
+.masar-filter.active span{background:rgba(255,255,255,.2);color:white}
+.lesson-card[hidden]{display:none!important}
+.masar-profile-panel{margin:22px 0 90px;padding:clamp(16px,4vw,26px);border:1px solid #e8e5ff;border-radius:24px;background:linear-gradient(155deg,#fff 0%,#f7f5ff 100%);box-shadow:0 12px 35px rgba(49,46,129,.08)}
+.masar-profile-panel h2{margin-top:4px}
+.masar-profile-card{display:grid;grid-template-columns:100px minmax(0,1fr);gap:18px;align-items:start;padding:18px;margin:16px 0;border:1px solid #e9e5ff;border-radius:20px;background:#fff}
+.masar-avatar-wrap{width:94px;height:94px;border-radius:50%;overflow:hidden;background:#ede9fe;display:grid;place-items:center;border:3px solid #d9ceff;box-shadow:0 4px 12px #6d4aff20}
+.masar-avatar{width:100%;height:100%;object-fit:cover}.masar-avatar-placeholder{font-size:2.5rem}
+.masar-profile-fields{min-width:0;display:flex;flex-direction:column;gap:9px}
+.masar-profile-fields label{font-size:.9rem;font-weight:750;color:#30265f}
+.masar-profile-fields input[type=text]{width:100%;min-width:0;box-sizing:border-box;border:1px solid #d9d6fe;border-radius:12px;padding:12px;background:#fcfbff;color:#202033;font:inherit}
+.masar-file-input{width:100%;font-size:.8rem}
+.masar-upload-label{display:inline-flex;align-self:flex-start;border-radius:10px;padding:8px 10px;background:#f2efff;cursor:pointer}
+.masar-save-profile{border:0;border-radius:12px;padding:12px 16px;background:linear-gradient(135deg,#10b981,#059669);color:#fff;font:inherit;font-weight:800;cursor:pointer;box-shadow:0 5px 12px #05966925}
+.masar-local-note{font-size:.8rem;line-height:1.5;color:#6b7280;margin:4px 0}
+.masar-profile-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}
+.masar-profile-stats>div,.masar-level-summary>div{background:#fff;border:1px solid #e9e5ff;border-radius:15px;padding:13px;display:flex;flex-direction:column;gap:7px;min-width:0}
+.masar-profile-stats span,.masar-level-summary span{font-size:.8rem;color:#5b5872;line-height:1.35}
+.masar-profile-stats strong,.masar-level-summary strong{font-size:1.2rem;color:#312e81}
+.masar-level-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));gap:10px;margin-bottom:22px}
+.masar-achievements-title{margin:22px 0 12px}
+.masar-achievements{display:grid;gap:10px}
+.masar-badge{display:flex;gap:12px;align-items:center;padding:12px;border-radius:15px;border:1px solid #e5e7eb;background:#fff}
+.masar-badge.earned{border-color:#a7f3d0;background:linear-gradient(100deg,#ecfdf5,#fff)}
+.masar-badge-icon{font-size:1.65rem;flex-shrink:0}.masar-badge>div{display:flex;flex-direction:column;gap:3px;min-width:0;flex:1}
+.masar-badge strong{font-size:.94rem;color:#24213b}.masar-badge small{font-size:.78rem;line-height:1.35;color:#6b7280}
+.masar-badge-status{font-size:.75rem;font-weight:800;color:#6b7280;white-space:nowrap}.masar-badge.earned .masar-badge-status{color:#047857}
+.masar-privacy-note{margin-top:18px;padding:12px;border-radius:12px;background:#fff7ed;color:#9a3412}
+@media(max-width:520px){.masar-profile-card{grid-template-columns:1fr;justify-items:center}.masar-profile-fields{width:100%}.masar-profile-stats{grid-template-columns:1fr}.masar-profile-stats>div{flex-direction:row;align-items:center;justify-content:space-between}.masar-level-filters{gap:6px}.masar-filter{font-size:.8rem;padding:9px 10px}.masar-badge{gap:8px;padding:10px}.masar-badge-status{font-size:.68rem}}
+
+  </style>
+  <title>MASAR — English Journey</title>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><img src="masar-logo.png" alt="MASAR logo"><div><strong>MASAR</strong><small>YOUR ENGLISH JOURNEY</small></div></div>
+    <div class="stats"><span title="Experience points">⚡ <b id="xp">0</b> XP</span><span title="Learning streak">🔥 <b id="streak">0</b></span></div>
+  </header>
+  <main>
+    <section class="welcome">
+      <p class="eyebrow">YOUR NEXT STEP STARTS HERE</p>
+      <h1>Small steps.<br><span>Real English.</span></h1>
+      <p class="sub">Learn useful English, practise every day, and build your confidence one lesson at a time.</p>
+      <div class="level-row"><span class="pill">A1–C1 · Beginner to Advanced pathways</span><span id="progress-label">Loading lesson progress…</span></div>
+      <div class="progress"><div id="progress-bar"></div></div>
+    </section>
+    <section class="path-section">
+      <div class="section-title"><div><p class="eyebrow">YOUR LEARNING PATH</p><h2>Keep moving forward</h2></div><span class="tiny-badge">A1 · A2 · B1 · B2 · C1</span></div>
+      <div id="lesson-path" class="lesson-path"></div>
+    </section>
+    <section class="note-card">
+      <div class="note-icon">💡</div><div><strong>Masar tip</strong><p>Don't worry about making mistakes. Every mistake is a chance to understand English better.</p></div>
+    </section>
+    <footer><span>MASAR · Practical English</span><button id="reset-btn" class="text-button">Reset demo progress</button></footer>
+  </main>
+  <nav class="bottom-nav" aria-label="Main navigation">
+    <button class="nav-item active" data-nav="learn"><span>🧭</span>Learn</button>
+    <button class="nav-item" data-nav="practice"><span>🎯</span>Practice</button>
+    <button class="nav-item" data-nav="profile"><span>👤</span>Profile</button>
+  </nav>
+  <dialog id="lesson-dialog">
+    <div class="dialog-head"><span id="lesson-unit" class="pill">LESSON</span><button id="close-dialog" class="close" aria-label="Close">×</button></div>
+    <div id="lesson-content"></div>
+  </dialog>
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+  <script>
+/* MASAR English Journey — Profile & Level Enhancements
+   Additive enhancement: keeps existing lesson data and progress logic intact.
+   Student profile and avatar are stored on this device only. */
+(() => {
+  const PROFILE_KEY = 'masar-student-profile-v1';
+  const LEVELS = [
+    { id: 'A1', label: 'Beginner' },
+    { id: 'A2', label: 'Elementary' },
+    { id: 'B1', label: 'Intermediate' },
+    { id: 'B2', label: 'Upper-Intermediate' },
+    { id: 'C1', label: 'Advanced' }
+  ];
+  let selectedLevel = 'ALL';
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const esc = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+
+  function readProfile() {
+    try {
+      const value = JSON.parse(localStorage.getItem(PROFILE_KEY) || '{}');
+      return { name: typeof value.name === 'string' ? value.name : '', photo: typeof value.photo === 'string' ? value.photo : '' };
+    } catch (_) { return { name: '', photo: '' }; }
+  }
+  function writeProfile(profile) {
+    try { localStorage.setItem(PROFILE_KEY, JSON.stringify(profile)); return true; }
+    catch (_) { if (typeof toast === 'function') toast('Could not save the photo. Try a smaller image.'); return false; }
+  }
+
+  function ensureLevelFilters() {
+    const path = $('#lesson-path');
+    if (!path || $('#masar-level-filters')) return;
+    const bar = document.createElement('div');
+    bar.id = 'masar-level-filters';
+    bar.className = 'masar-level-filters';
+    bar.setAttribute('aria-label', 'Filter lessons by level');
+    bar.innerHTML = `
+      <button type="button" class="masar-filter active" data-level="ALL">All lessons <span>${lessons.length}</span></button>
+      ${LEVELS.map(level => `<button type="button" class="masar-filter" data-level="${level.id}">${level.id} ${level.label} <span>${lessons.filter(l => l.level === level.id).length}</span></button>`).join('')}`;
+    path.parentNode.insertBefore(bar, path);
+    bar.addEventListener('click', event => {
+      const button = event.target.closest('[data-level]');
+      if (!button) return;
+      selectedLevel = button.dataset.level;
+      bar.querySelectorAll('.masar-filter').forEach(item => item.classList.toggle('active', item === button));
+      applyLevelFilter();
+    });
+  }
+  function applyLevelFilter() {
+    const path = $('#lesson-path');
+    if (!path || typeof lessons === 'undefined') return;
+    path.querySelectorAll('.lesson-card').forEach(card => {
+      const lesson = lessons[Number(card.dataset.index)];
+      card.hidden = !!(selectedLevel !== 'ALL' && lesson && lesson.level !== selectedLevel);
+    });
+    const completedCount = lessons.filter(l => isDone(l.id)).length;
+    const label = $('#progress-label');
+    if (label) label.textContent = `${completedCount} of ${lessons.length} lessons complete`;
+    const allButton = $('#masar-level-filters [data-level="ALL"] span');
+    if (allButton) allButton.textContent = lessons.length;
+    LEVELS.forEach(level => {
+      const count = $('#masar-level-filters [data-level="' + level.id + '"] span');
+      if (count) count.textContent = lessons.filter(l => l.level === level.id).length;
+    });
+  }
+
+  function achievementsHTML() {
+    const completed = lessons.filter(l => isDone(l.id));
+    const levelBadges = LEVELS.map((level, index) => {
+      const levelLessons = lessons.filter(l => l.level === level.id);
+      const icons = ['🌟', '🏅', '🎯', '🚀', '👑'];
+      return [icons[index], `${level.id} Finisher`, `Complete every ${level.id} ${level.label} lesson`, levelLessons.length > 0 && levelLessons.every(l => isDone(l.id))];
+    });
+    const badges = [
+      ['🌱', 'First Step', 'Complete your first lesson', completed.length >= 1],
+      ['📚', '10 Lessons', 'Complete 10 lessons', completed.length >= 10],
+      ['🔥', '3-Day Streak', 'Learn on 3 consecutive days', state.streak >= 3],
+      ...levelBadges
+    ];
+    return badges.map(([icon, title, desc, earned]) => `<div class="masar-badge ${earned ? 'earned' : 'locked-badge'}"><span class="masar-badge-icon">${icon}</span><div><strong>${title}</strong><small>${desc}</small></div><span class="masar-badge-status">${earned ? '✓ Earned' : '🔒'}</span></div>`).join('');
+  }
+
+  function renderProfile() {
+    const old = $('.profile-panel');
+    if (old) old.remove();
+    const profile = readProfile();
+    const doneCount = lessons.filter(l => isDone(l.id)).length;
+    const panel = document.createElement('section');
+    panel.className = 'profile-panel masar-profile-panel';
+    panel.innerHTML = `
+      <p class="eyebrow">YOUR LEARNING SPACE</p>
+      <h2>My MASAR profile</h2>
+      <div class="masar-profile-card">
+        <div class="masar-avatar-wrap">
+          <img class="masar-avatar" id="masar-avatar-preview" src="${profile.photo || ''}" alt="Student profile photo" ${profile.photo ? '' : 'hidden'}>
+          <div class="masar-avatar-placeholder" id="masar-avatar-placeholder" ${profile.photo ? 'hidden' : ''}>👤</div>
+        </div>
+        <div class="masar-profile-fields">
+          <label for="masar-student-name">Your name / اسمك</label>
+          <input id="masar-student-name" type="text" maxlength="50" autocomplete="name" placeholder="Enter your name" value="${esc(profile.name)}">
+          <label class="masar-upload-label" for="masar-student-photo">📷 Choose a profile photo</label>
+          <input id="masar-student-photo" class="masar-file-input" type="file" accept="image/*">
+          <button type="button" class="masar-save-profile" id="masar-save-profile">Save profile</button>
+          <p class="masar-local-note">Your profile is saved on this device only.</p>
+        </div>
+      </div>
+      <div class="masar-profile-stats">
+        <div><span>⚡ XP points</span><strong>${Number(state.xp) || 0}</strong></div>
+        <div><span>📘 Lessons done</span><strong>${doneCount}/${lessons.length}</strong></div>
+        <div><span>🔥 Learning streak</span><strong>${Number(state.streak) || 0} days</strong></div>
+      </div>
+      <div class="masar-level-summary">
+        ${LEVELS.map(level => {
+          const levelLessons = lessons.filter(l => l.level === level.id);
+          const completedLevelLessons = levelLessons.filter(l => isDone(l.id)).length;
+          return `<div><span>${level.id} · ${level.label}</span><strong>${completedLevelLessons}/${levelLessons.length}</strong></div>`;
+        }).join('')}
+      </div>
+      <h3 class="masar-achievements-title">🏆 My achievements</h3>
+      <div class="masar-achievements">${achievementsHTML()}</div>
+      <p class="masar-local-note masar-privacy-note">Note: student accounts and a shared leaderboard are not connected yet. Progress and profile are currently stored on this device.</p>`;
+    const main = $('main');
+    if (main) {
+      main.appendChild(panel);
+      panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  function handleProfileClick(event) {
+    const button = event.target.closest('.nav-item');
+    if (!button || button.dataset.nav !== 'profile') return;
+    event.preventDefault();
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+    document.querySelectorAll('.nav-item').forEach(item => item.classList.toggle('active', item === button));
+    renderProfile();
+  }
+
+  // Capture profile navigation before the original demo profile handler.
+  document.addEventListener('click', handleProfileClick, true);
+
+  document.addEventListener('click', event => {
+    if (event.target.closest('#masar-save-profile')) {
+      const profile = readProfile();
+      profile.name = ($('#masar-student-name')?.value || '').trim().slice(0, 50);
+      if (writeProfile(profile)) {
+        if (typeof toast === 'function') toast(profile.name ? `Profile saved. Welcome, ${profile.name}!` : 'Profile saved.');
+        renderProfile();
+      }
+    }
+  });
+
+  document.addEventListener('change', event => {
+    if (event.target.id !== 'masar-student-photo') return;
+    const file = event.target.files && event.target.files[0];
+    if (!file) return;
+    if (!file.type.startsWith('image/')) { if (typeof toast === 'function') toast('Please choose an image file.'); return; }
+    const reader = new FileReader();
+    reader.onload = () => {
+      const image = new Image();
+      image.onload = () => {
+        const canvas = document.createElement('canvas');
+        const size = 256;
+        const scale = Math.min(size / image.width, size / image.height, 1);
+        canvas.width = Math.max(1, Math.round(image.width * scale));
+        canvas.height = Math.max(1, Math.round(image.height * scale));
+        canvas.getContext('2d').drawImage(image, 0, 0, canvas.width, canvas.height);
+        const photo = canvas.toDataURL('image/jpeg', 0.78);
+        const profile = readProfile(); profile.photo = photo;
+        if (writeProfile(profile)) {
+          const preview = $('#masar-avatar-preview');
+          const placeholder = $('#masar-avatar-placeholder');
+          if (preview) { preview.src = photo; preview.hidden = false; }
+          if (placeholder) placeholder.hidden = true;
+          if (typeof toast === 'function') toast('Photo added. Tap Save profile to save your name too.');
+        }
+      };
+      image.onerror = () => { if (typeof toast === 'function') toast('Could not read this image. Try another photo.'); };
+      image.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+  });
+
+  // Wrap the existing render function so level filters remain applied after lessons update.
+  if (typeof render === 'function') {
+    const originalRender = render;
+    render = function() {
+      originalRender();
+      ensureLevelFilters();
+      applyLevelFilter();
+    };
+    render();
+  }
+})();
+
+  </script>
+</body>
+</html>
